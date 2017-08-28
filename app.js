@@ -31,6 +31,7 @@ if user wants upper body workout sort through array of workouts to find type = u
 
 */
 
+
 //////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', False, False, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', False, True, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
@@ -43,3 +44,58 @@ var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', False, False, 'quads',
 var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', False, False, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'This advanced move requires flexibility, strength, balance, and coordination. This move can help build tremendous lower body strength.');
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', False, False, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Beginner', False, False, 'core', 'https://www.youtube.com/embed/l2XsG9W5rYo', 'This exercise strengthens the obliques, and can be performed with or without weight.');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getFormData () {
+  var getData = getElementById('workoutForm');
+  for (var i = 0; i < getData.length; i++){
+
+  }
+}
+
+
+
+
+/*
+timer for result page
+*/
+function timer(time) {
+  var getElementById('workoutTimer');
+
+}
