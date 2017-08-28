@@ -41,3 +41,20 @@
 .formHeader {
   text-align: center;
 }
+.workoutFrame {
+  width: 50%;
+  height: 300px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid black;
+}
+.iframeSizing {
+  width: 400px;
+  height: 250px;
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float:left;
+}
+.description {
+}
