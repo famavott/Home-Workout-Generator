@@ -32,3 +32,12 @@
   margin-left: 50%;
   width: 40px;
 }
+.formBox {
+  width: 46%;
+  margin-left: 27%;
+  margin-right: 27%;
+  text-align: left;
+}
+.formHeader {
+  text-align: center;
+}
