@@ -3,6 +3,7 @@
 /// Gobal Variables
 var workouts = [];
 var workoutOptions = [];
+var generatedWorkout = [];
 
 ////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', False, False, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
@@ -22,7 +23,6 @@ var lowerBody = [squat, lunge, pistol];
 var totalBody = [burpee, jumpingJack, snatch];
 var core = [crunch, russianTwist];
 
-
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
   this.type = type;
@@ -35,6 +35,8 @@ function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
 }
 
 function pickCore() {
+  var randoNum = Math.floor(Math.random() * core.length);
+  return core[random];
 }
 
 if (user.type === 'Upper'){
@@ -45,6 +47,14 @@ if (user.type === 'Upper'){
   workoutOptions = filterWorkouts(user, totalBody);
 }
 
+for (var i = 0; i < 2; i++){
+  var randoNum = Math.floor(Math.random() * workoutOptions.length);
+  if (workoutOptions[randoNum].group === 'shoulders_arms'){
+    generatedWorkout.push(workoutOptions[randoNum]);
+  }else {
+    
+  }
+}
 
 function filterWorkouts(user, typeArray){
   var newWorkouts = typeArray;
@@ -61,15 +71,15 @@ function filterWorkouts(user, typeArray){
   if (user.level === 'Beginner'){
     newWorkouts = newWorkouts.filter(function(newWorkouts){
       return newWorkouts.level === 'Beginner';
-    })
+    });
   }else if (user.level === 'Intermediate') {
     newWorkouts = newWorkouts.filter(function(newWorkouts){
       return newWorkouts.level === 'Intermediate';
-    })
+    });
   }else {
     newWorkouts = newWorkouts.filter(function(newWorkouts){
       return newWorkouts.level === 'Advanced';
-    })
+    });
   }
   return newWorkouts;
 }
@@ -79,15 +89,7 @@ function filterWorkouts(user, typeArray){
 generate array of possible workouts
 pick 2 exercises + 1 core exercise
 
-
-
 */
-
-
-
-
-
-
 
 /*  Kavdi's area... DON"T TOUCH!!   */
 
@@ -96,9 +98,6 @@ function getFormData () {
   var name = document.getElementsByName('Name').value;
 
 }
-
-
-
 
 /*
 timer for result page
