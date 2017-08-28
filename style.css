@@ -32,3 +32,29 @@
   margin-left: 50%;
   width: 40px;
 }
+.formBox {
+  width: 46%;
+  margin-left: 27%;
+  margin-right: 27%;
+  text-align: left;
+}
+.formHeader {
+  text-align: center;
+}
+.workoutFrame {
+  width: 50%;
+  height: 300px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid black;
+}
+.iframeSizing {
+  width: 400px;
+  height: 250px;
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float:left;
+}
+.description {
+}
