@@ -26,7 +26,29 @@ function pickTotalBody(){
 
 }
 
+function filterWorkouts(workoutArray, user){
+  var newWorkouts;
+  if (user.type === 'upper'){
+    newWorkouts = workoutArray.filter(function(workoutArray){
+      return workoutArray.type === 'upper';
+    });
+  }else if (user.type === 'lower'){
+    newWorkouts = workoutArray.filter(function(workoutArray){
+      return workoutArray.type === 'lower';
+    });
+  }
+  else {
+    newWorkouts = workoutArray.filter(function(workoutArray){
+      return workoutArray.type === 'total';
+    });
+  }
+
+  if (user.)
+}
+
 /*
 if user wants upper body workout sort through array of workouts to find type = upperBody
-
+var longWords = words.filter(function(word){
+  return word.length > 6;
+});
 */
