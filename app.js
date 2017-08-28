@@ -4,7 +4,7 @@
 var workouts = [];
 var workoutOptions = [];
 
-//////Initial Instances////////
+////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', False, False, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', False, True, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
 var snatch = new MakeWorkout('Snatch', 'Total', 'Advanced', True, False, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a barbell or dumbbell from the ground to overhead.');
@@ -92,10 +92,9 @@ pick 2 exercises + 1 core exercise
 /*  Kavdi's area... DON"T TOUCH!!   */
 
 function getFormData () {
-  var getData = getElementById('workoutForm');
-  for (var i = 0; i < getData.length; i++){
+  var getData = document.getElementById('workoutForm').addEventListener('submit', getFormData);
+  var name = document.getElementsByName('Name').value;
 
-  }
 }
 
 
@@ -104,7 +103,7 @@ function getFormData () {
 /*
 timer for result page
 */
-function timer(time) {
-  var getElementById('workoutTimer');
-
-}
+// function timer(time) {
+//   var getElementById('workoutTimer');
+//
+// }
