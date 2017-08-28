@@ -30,3 +30,58 @@ function pickTotalBody(){
 if user wants upper body workout sort through array of workouts to find type = upperBody
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getFormData () {
+  var getData = getElementById('workoutForm');
+  for (var i = 0; i < getData.length; i++){
+
+  }
+}
+
+
+
+
+/*
+timer for result page
+*/
+function timer(time) {
+  var getElementById('workoutTimer');
+
+}
