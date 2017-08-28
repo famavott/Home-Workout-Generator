@@ -2,6 +2,7 @@
 
 var workouts = [];
 
+
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
   this.type = type;
@@ -31,6 +32,10 @@ if user wants upper body workout sort through array of workouts to find type = u
 
 */
 
+=======
+var workoutOptions = [];
+var generatedWorkout = [];
+
 
 ////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', False, False, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
@@ -50,6 +55,62 @@ var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Beginner', False, F
 
 
 
+function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
+  this.name = name;
+  this.type = type;
+  this.level = level;
+  this.equipment = equipment;
+  this.cardio = cardio;
+  this.group = group;
+  this.img = group;
+  this.descr = descr;
+}
+
+function pickCore() {
+  var randoNum = Math.floor(Math.random() * core.length);
+  return core[random];
+}
+
+
+
+for (var i = 0; i < 2; i++){
+  var randoNum = Math.floor(Math.random() * workoutOptions.length);
+  if (workoutOptions[randoNum].group === 'shoulders_arms'){
+    generatedWorkout.push(workoutOptions[randoNum]);
+  }else {
+
+  }
+}
+
+
+
+function filterWorkouts(user, typeArray){
+  var newWorkouts = typeArray;
+  if (user.equipment === true){
+    newWorkouts = workoutArray.filter(function(workoutArray){
+      return workoutArray.equipment === true;
+    });
+  }
+  else {
+    newWorkouts = workoutArray.filter(function(workoutArray){
+      return workoutArray.equipment === false;
+    });
+  }
+  if (user.level === 'Beginner'){
+    newWorkouts = newWorkouts.filter(function(newWorkouts){
+      return newWorkouts.level === 'Beginner';
+    });
+  }else if (user.level === 'Intermediate') {
+    newWorkouts = newWorkouts.filter(function(newWorkouts){
+      return newWorkouts.level === 'Intermediate';
+    });
+  }else {
+    newWorkouts = newWorkouts.filter(function(newWorkouts){
+      return newWorkouts.level === 'Advanced';
+    });
+  }
+  return newWorkouts;
+}
 
 
 
@@ -62,6 +123,11 @@ var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Beginner', False, F
 
 
 
+
+
+*/
+
+/*  Kavdi's area... DON"T TOUCH!!   */
 
 
 
@@ -95,9 +161,6 @@ function getFormData (event) {
 }
 getFormData();
 console.log(newPerson);
-
-
-
 
 /*
 timer for result page
