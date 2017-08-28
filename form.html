@@ -19,24 +19,36 @@
          <input type="number" name="Age" required="required">
        </p>
        <p>Fitness Level
-         <input type="radio" name="level" value="Beginner">Beginner
-         <input type="radio" name="level" value="Intermediate">Intermediate
-         <input type="radio" name="level" value="Expert">Expert
+         <input type="radio" name="level" value="Beginner" required>Beginner
+         <input type="radio" name="level" value="Intermediate" required>Intermediate
+         <input type="radio" name="level" value="Expert" required>Expert
       </p>
       <p>Length of Workout
-        <input type="radio" name="length" value="10min">10 min
-        <input type="radio" name="length" value="20min">20 min
-        <input type="radio" name="length" value="30min">30 min
-        <input type="radio" name="length" value="40min">40 min
+        <input type="radio" name="length" value="10min" required>10 min
+        <input type="radio" name="length" value="20min" required>20 min
+        <input type="radio" name="length" value="30min" required>30 min
+        <input type="radio" name="length" value="40min" required>40 min
         </main>
       </p>
       <p>Type of Workout
         <br>
-          <input type="radio" name="type" value="fullBody">Full Body
-          <input type="radio" name="type" value="upperBody">Upper Body
-          <input type="radio" name="type" value="lowerBody">Lower Body
+          <input type="radio" name="type" value="fullBody" required>Full Body
+          <input type="radio" name="type" value="upperBody" required>Upper Body
+          <input type="radio" name="type" value="lowerBody" required>Lower Body
       </p>
-
+      <p>Workout Goals:
+        <br>
+        <!-- have to make sure user chooses at least one option with js or jquery -->
+        <input type="checkbox" name="goal" value="basicFitness">Basic Fitness
+        <input type="checkbox" name="goal" value="weightLoss">Weight Loss
+        <input type="checkbox" name="goal" value="muscleGain">Muscle Gain
+        <input type="checkbox" name="goal" value="cardio">Cardio
+        <input type="checkbox" name="goal" value="muscleEndurance">Muscle Endurance
+      </p>
+      <p>Do you have access to equipment?
+        <input type="radio" name="equipment" value="yes" required>Yes
+        <input type="radio" name="equipment" value="no" required>No
+      </p>
       </form>
     </div>
   </body>
