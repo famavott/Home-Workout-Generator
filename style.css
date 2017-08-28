@@ -1,0 +1,18 @@
+.bannerImg {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.mainTitle {
+  text-align: center;
+  text-decoration: underline;
+}
+.mainTextModify {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.testimonials {
+  width: 40%;
+  float:left;
+  border: 1px solid black;
+}
