@@ -203,19 +203,43 @@ var newPerson = [];
 
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementsByName('Name').value;
-  var age = document.getElementsByName('Age').value;
-  var fitnessLevel = document.queryselector('input[name = level]:checked').value;
-  var workoutLength = document.queryselector().value;
-  var workoutType = document.queryselector().value;
-  var goals = document.queryselector().value;
-  var equipment = document.queryselector().value;
-  newPerson.push(name, age, fitnessLevel, workoutLength, workoutType, goals, equipment);
+  var name = document.getElementsByName('Name')[0].value;
+  var age = document.getElementsByName('Age')[0].value;
+  newPerson.push(name, age);
+  var fitnessLevel = document.getElementsByName('level');
+  for (var i = 0; i < fitnessLevel.length; i++){
+    if (fitnessLevel[i].checked){
+      newPerson.push(fitnessLevel[i].value);
+    }
+  }
+  var workoutLength = document.getElementsByName('length');
+  for (var i = 0; i < workoutLength.length; i++){
+    if (workoutLength[i].checked){
+      newPerson.push(workoutLength[i].value);
+    }
+  }
+  var workoutType = document.getElementsByName('type');
+  for (var i = 0; i < workoutType.length; i++){
+    if (workoutType[i].checked){
+      newPerson.push(workoutType[i].value);
+    }
+  }
+  var goals = document.getElementsByName('goal');
+  for (var i = 0; i < goals.length; i++){
+    if (goals[i].checked){
+      newPerson.push(goals[i].value);
+    }
+  }
+  var equipment = document.getElementsByName('equipment');
+  for (var i = 0; i < equipment.length; i++){
+    if (equipment[i].checked){
+      newPerson.push(equipment[i].value);
+    }
+  }
 }
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
-
 
 /*
 timer for result page
