@@ -11,7 +11,7 @@ function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.equipment = equipment;
   this.cardio = cardio;
   this.group = group;
-  this.img = group;
+  this.img = img;
   this.descr = descr;
 }
 
@@ -19,12 +19,14 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickTotalBody(){
@@ -32,6 +34,7 @@ function pickTotalBody(){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
     generatedWorkout.push(totalBody[i]); //this could duplicate exercises
   }
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 //Test Object for user
 var user = {type: 'Upper', level:'Intermediate', equipment: false};
@@ -158,21 +161,6 @@ if (user.type === 'Upper'){
   workoutOptions = filterWorkouts(user, totalBody);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (user.type === 'Upper'){
   pickUpperBody();
 }else if (user.type === 'Lower'){
@@ -182,22 +170,7 @@ if (user.type === 'Upper'){
 }
 console.log(generatedWorkout);
 
-
 /*  Kavdi's area... DON"T TOUCH!!   */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var newPerson = [];
 
@@ -248,3 +221,16 @@ timer for result page
 //   var getElementById('workoutTimer');
 //
 // }
+var resultsPage = [];
+var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
+function createWorkoutPage() {
+  resultsPage = JSON.parse(localStorage.getItem('workoutData'));
+  for(var i = 0; i < resultsPage.length; i++){
+    var workoutContainer = document.getElementById(workoutId[i]);
+    var video = document.createElement('iframe');
+    video.setAttribute('class', 'iframeSizing');
+    video.src = resultsPage[i].img;
+    workoutContainer.appendChild(video);
+  }
+}
+createWorkoutPage();
