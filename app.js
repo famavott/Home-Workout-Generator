@@ -37,7 +37,7 @@ function pickTotalBody(){
   localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 //Test Object for user
-var user = {type: 'Upper', level:'Intermediate', equipment: false};
+var user = {type: 'Lower', level:'Intermediate', equipment: false};
 
 /*
 if user wants upper body workout sort through array of workouts to find type = upperBody
@@ -50,29 +50,37 @@ var regPushup = new MakeWorkout('Regular Push-up', 'Upper', 'Intermediate', fals
 var diamondPushup = new MakeWorkout('Narrow/Diamond Push-up', 'Upper', 'Advanced', false, false, 'chest', 'https://www.youtube.com/embed/SwoNNo4W1OU', 'A more challenging version of the push-up that works the more than normal push-ups.');
 //Upper body - shoulder/arms
 var shoulderTaps = new MakeWorkout('Shoulder Taps', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/gWHQpMUd7vw', 'Works the deltoids, triceps, and core by forcing you to stabilize your body and touch your hand to the opposite shoulder.');
+var superman = new MakeWorkout('Supermans', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/67rgxYNKbZY', 'Simultaneously lift your arms, legs, and chest, and contract at the top of the movement. This exercise can be a good compliment to core movements.');
 var dips = new MakeWorkout('Dips', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/vhXqTx7JYSs', 'Dips work your shoulders, arms, and chest, and can be done with a dip bar, bench, or chair.');
 var handstand = new MakeWorkout('Handstand Push-up', 'Upper', 'Advanced', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/hvoQiF0kBI8', 'A very difficult gymnastics and strength move. Descend until the head touches the ground, brace the core, and push with the shoulders and arms.');
 //Lower body - glutes
 var gluteBridge = new MakeWorkout('Glute Bridge', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/N48d7sm8dbU', 'Strengthens the glutes, and increases glute activation with no equipment necessary.');
+var donkeykickbacks = new MakeWorkout('Donkey Kickbakcs', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/SJ1Xuz9D-ZQ', 'Targets each glute, and forced you to stabilize your core through the movement.');
+var calfRaise = new MakeWorkout('Calf Raises', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/UV8gOrHmuKc', 'This builds muscle and tones the calves by lifting as high as you can onto your toes.');
 var squat = new MakeWorkout('Air Squats', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/C_VtOYc6j5c', 'A classic athletic exercise that works most of the lower body, and is the foundation for any workout program.');
 var deadlift = new MakeWorkout('Glute Bridge', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/HtHxnWmMgzM', 'A great move that develops balance, as well as hamstring and glue strength. Can be done with or without weights.');
 //Lower body - quad
 var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', false, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles.');
 var boxJump = new MakeWorkout('Box Jump', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/52r_Ul5k03g', 'Great for improving athleticism and muscle that can become a challenging cardiovascular workout.');
+var jumpLunge = new MakeWorkout('Jumping Lunges', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/Kq5lZ4o26Ho', 'Bring lunges to the next level by explosively jumping when transtioning between legs.');
 var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', false, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'This advanced move requires flexibility, strength, balance, and coordination. This move can help build tremendous lower body strength.');
 //Core
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var legRaise = new MakeWorkout('Leg Raises', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/_OQaO65Vdzs', 'This exercise targets the abdominals and hip flexors, and will help to sculpt the core.');
+var plank = new MakeWorkout('Plank', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/pSHjTRCQxIw', 'This static exercise works just about every muscle in the body, and helps to sculpt the core.');
+var vUp = new MakeWorkout('V-ups', 'Core', 'Advanced', false, false, 'core', 'https://www.youtube.com/embed/-JIwvMSk4vo', 'Keep your legs straight and bring your upper body off of the floor to try and touch your toes. Great for targeting your middle and upper abs.');
 var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Advanced', false, false, 'core', 'https://www.youtube.com/embed/l2XsG9W5rYo', 'This exercise strengthens the obliques, and can be performed with or without weight.');
 //Total body
 var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
+var bearcrawl = new MakeWorkout('Bear Crawl', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/bfT5TaRFKQw', 'Increase your heart rate and stabilize your core by doing this fun exercise.');
 var mountainClimber = new MakeWorkout('Mountain Climber', 'Total', 'Intermediate', false, true, 'Total', 'https://www.youtube.com/embed/w2iTOneGPdU', 'A great total body exercise that heavily utilizes the core, and can be a difficult cardiovascular exercise.');
+var spidermanPushup = new MakeWorkout('Spiderman Push-up', 'Total', 'Advanced', false, false, 'Total', 'https://www.youtube.com/embed/hWVf7gt5dQ8', 'An advanced version of the push-up that will work the chest, triceps, shoulders, core, and hip flexors. Go slow and focus on the form.');
 var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 
-var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand];
-var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol];
-var totalBody = [burpee, jumpingJack, mountainClimber];
-var core = [crunch, russianTwist, legRaise];
+var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman];
+var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks];
+var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup];
+var core = [crunch, russianTwist, Vup, legRaise, plank];
 
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
@@ -177,43 +185,48 @@ console.log(generatedWorkout);
 //
 
 
-
-
 var newPerson = [];
 
 function getFormData (event) {
   event.preventDefault();
   var name = document.getElementsByName('Name')[0].value;
+  person.name = name;
   var age = document.getElementsByName('Age')[0].value;
+  person.age = age;
   newPerson.push(name, age);
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
       newPerson.push(fitnessLevel[i].value);
+      person.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
       newPerson.push(workoutLength[i].value);
+      person.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
       newPerson.push(workoutType[i].value);
+      person.type = workoutType[i].value;
     }
   }
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
       newPerson.push(goals[i].value);
+      person.goal = goals[i].value;
     }
   }
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
       newPerson.push(equipment[i].value);
+      person.equipment = equipment[i].value;
     }
   }
 }
@@ -221,23 +234,11 @@ function getFormData (event) {
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
-function toObject(array) {
-  var user = new person();
-  for (var i = 0; i < array.length; ++i)
-    person[i] = array[i];
-  return person;
-}
-// toObject(newPerson);
-// function person(newPerson[0], newPerson[1], level, length, type,
-// goal, equipment) {
-//   this.name = name;
-//   this.age = age;
-//   this.level = level;
-//   this.length = length;
-//   this.type = type;
-//   this.goal = goal;
-//   this.equipment = equipment;
-// }
+
+var person = {
+  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
+};
+
 
 /*
 timer for result page
@@ -246,6 +247,7 @@ timer for result page
 //   var getElementById('workoutTimer');
 //
 // }
+
 var resultsPage = [];
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
@@ -256,6 +258,13 @@ function createWorkoutPage() {
     video.setAttribute('class', 'iframeSizing');
     video.src = resultsPage[i].img;
     workoutContainer.appendChild(video);
+  }
+  for(var i = 0; i < resultsPage.length; i++){
+    var workoutContainer = document.getElementById(workoutId[i]);
+    var iframeDesc = document.createElement('p');
+    iframeDesc.setAttribute('class', 'description');
+    iframeDesc.innerHTML = resultsPage[i].descr;
+    workoutContainer.appendChild(iframeDesc);
   }
 }
 createWorkoutPage();
