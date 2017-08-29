@@ -170,7 +170,14 @@ if (user.type === 'Upper'){
 }
 console.log(generatedWorkout);
 
-/*  Kavdi's area... DON"T TOUCH!!   */
+
+//
+// /*  Kavdi's area... DON"T TOUCH!!   */
+//
+//
+
+
+
 
 var newPerson = [];
 
@@ -213,6 +220,24 @@ function getFormData (event) {
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
+
+function toObject(array) {
+  var user = new person();
+  for (var i = 0; i < array.length; ++i)
+    person[i] = array[i];
+  return person;
+}
+// toObject(newPerson);
+// function person(name, age, level, length, type,
+// goal, equipment) {
+//   this.name = name;
+//   this.age = age;
+//   this.level = level;
+//   this.length = length;
+//   this.type = type;
+//   this.goal = goal;
+//   this.equipment = equipment;
+// }
 
 /*
 timer for result page
