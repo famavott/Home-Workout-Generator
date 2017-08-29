@@ -3,6 +3,11 @@
 var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
+var resultsPage = [];
+var newPerson = [];
+var person = {
+  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
+};
 
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
@@ -19,14 +24,14 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickTotalBody(){
@@ -34,7 +39,7 @@ function pickTotalBody(){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
     generatedWorkout.push(totalBody[i]); //this could duplicate exercises
   }
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 //Test Object for user
 // var user = {type: 'Total', level:'Advanced', equipment: false, length: '20min'};
@@ -161,52 +166,44 @@ function filterWorkouts(user, typeArray){
   return newWorkouts;
 }
 
-if (user.type === 'Upper'){
-  workoutOptions = filterWorkouts(user, upperBody);
-} else if (user.type === 'Lower') {
-  workoutOptions = filterWorkouts(user, lowerBody);
-} else {
-  workoutOptions = filterWorkouts(user, totalBody);
-}
-//Code below selects workouts based on type and duration of workout
-// if (user.type === 'Upper') {
-//   pickUpperBody();
-// } else if (user.type === 'Lower') {
-//   pickLowerBody();
-// } else {
-//   pickTotalBody();
-// }
-if (user.length === '10min' || user.length === '30min') {
-  if (user.type === 'Upper') {
-    pickUpperBody();
+function genUserWorkout(){
+  if (user.type === 'Upper'){
+    workoutOptions = filterWorkouts(user, upperBody);
   } else if (user.type === 'Lower') {
-    pickLowerBody();
+    workoutOptions = filterWorkouts(user, lowerBody);
   } else {
-    pickTotalBody();
+    workoutOptions = filterWorkouts(user, totalBody);
   }
-}
-else if (user.length === '20min' || user.length === '40min' ) {
-  if (user.type === 'Upper') {
-    pickUpperBody();
-    pickUpperBody();
-  } else if (user.type === 'Lower') {
-    pickLowerBody();
-    pickLowerBody();
-  } else {
-    pickTotalBody();
-    pickTotalBody();
+
+  if (user.length === '10min' || user.length === '30min') {
+    if (user.type === 'Upper') {
+      pickUpperBody();
+    } else if (user.type === 'Lower') {
+      pickLowerBody();
+    } else {
+      pickTotalBody();
+    }
   }
+  else if (user.length === '20min' || user.length === '40min' ) {
+    if (user.type === 'Upper') {
+      pickUpperBody();
+      pickUpperBody();
+    } else if (user.type === 'Lower') {
+      pickLowerBody();
+      pickLowerBody();
+    } else {
+      pickTotalBody();
+      pickTotalBody();
+    }
+  }
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 console.log(generatedWorkout);
-
 
 //
 // /*  Kavdi's area... DON"T TOUCH!!   */
 //
 //
-
-
-var newPerson = [];
 
 function getFormData (event) {
   event.preventDefault();
@@ -250,17 +247,12 @@ function getFormData (event) {
       person.equipment = equipment[i].value;
     }
   }
+  genUserWorkout();
   window.location = 'result.html';
 }
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
-
-
-var person = {
-  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
-};
-
 
 /*
 timer for result page
@@ -270,7 +262,6 @@ timer for result page
 //
 // }
 
-var resultsPage = [];
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
