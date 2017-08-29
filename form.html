@@ -3,16 +3,24 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title></title>
+    <title>Workout Bro's</title>
   </head>
   <body>
+    <nav>
+      <h1 class = "mainTitle">Workout Bro's
+      </h1>
+    </nav>
     <div class = "formBox">
+      <hr/>
+      <h2 class = "formHeader">Let's get started with making your workout, please answer these questions.
+      </h2>
+      <hr/>
       <form id="workoutForm" action="index.html" method="post">
        <p>Name:
          <input type="text" name="Name" size="15" placeholder="input name" required="required">
        </p>
        <p>Age:
-         <input type="number" name="Age" required="required">
+         <input type="number" name="Age" placeholder="input age" required="required" min="15" max="100">
        </p>
        <p>Fitness Level
          <input type="radio" name="level" value="Beginner" required>Beginner
@@ -28,7 +36,7 @@
       </p>
       <p>Type of Workout
         <br>
-          <input type="radio" name="type" value="fullBody" required>Full Body
+          <input type="radio" name="type" value="totalBody" required>Total Body
           <input type="radio" name="type" value="upperBody" required>Upper Body
           <input type="radio" name="type" value="lowerBody" required>Lower Body
       </p>
@@ -45,8 +53,14 @@
         <input type="radio" name="equipment" value="yes" required>Yes
         <input type="radio" name="equipment" value="no" required>No
       </p>
+      <input id="clickMe" type="submit" name="submit" value="Get Swoll">
       </form>
     </div>
+    <footer>
+      <hr/>
+      <p>Location
+      </p>
+    </footer>
   </body>
   <script src="app.js"></script>
 </html>
