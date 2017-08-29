@@ -1,9 +1,41 @@
 'use strict';
 
-/// Gobal Variables
 var workouts = [];
+
+
+function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
+  this.name = name;
+  this.type = type;
+  this.level = level;
+  this.equipment = equipment;
+  this.cardio = cardio;
+  this.group = group;
+  this.img = group;
+  this.descr = descr;
+}
+
+function pickUpperBody(){
+}
+
+function pickLowerBody(){
+}
+
+function pickCore() {
+}
+
+function pickTotalBody(){
+
+}
+
+/*
+if user wants upper body workout sort through array of workouts to find type = upperBody
+
+*/
+
+=======
 var workoutOptions = [];
 var generatedWorkout = [];
+
 
 ////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', False, False, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
@@ -18,10 +50,10 @@ var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', False, False, 
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', False, False, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Beginner', False, False, 'core', 'https://www.youtube.com/embed/l2XsG9W5rYo', 'This exercise strengthens the obliques, and can be performed with or without weight.');
 
-var upperBody = [pushup, pullup, shoulderPress];
-var lowerBody = [squat, lunge, pistol];
-var totalBody = [burpee, jumpingJack, snatch];
-var core = [crunch, russianTwist];
+
+
+
+
 
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
@@ -39,22 +71,18 @@ function pickCore() {
   return core[random];
 }
 
-if (user.type === 'Upper'){
-  workoutOptions = filterWorkouts(user, upperBody);
-}else if (user.type === 'Lower'){
-  workoutOptions = filterWorkouts(user, lowerBody);
-}else{
-  workoutOptions = filterWorkouts(user, totalBody);
-}
+
 
 for (var i = 0; i < 2; i++){
   var randoNum = Math.floor(Math.random() * workoutOptions.length);
   if (workoutOptions[randoNum].group === 'shoulders_arms'){
     generatedWorkout.push(workoutOptions[randoNum]);
   }else {
-    
+
   }
 }
+
+
 
 function filterWorkouts(user, typeArray){
   var newWorkouts = typeArray;
@@ -84,20 +112,55 @@ function filterWorkouts(user, typeArray){
   return newWorkouts;
 }
 
-/*
 
-generate array of possible workouts
-pick 2 exercises + 1 core exercise
+
+
+
+
+
+
+
+
+
+
+
 
 */
 
 /*  Kavdi's area... DON"T TOUCH!!   */
 
-function getFormData () {
-  var getData = document.getElementById('workoutForm').addEventListener('submit', getFormData);
-  var name = document.getElementsByName('Name').value;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+var newPerson = [];
+
+document.getElementById('clickMe');
+document.addEventListener('submit', 'clickMe');
+
+function getFormData (event) {
+  event.preventDefault();
+  var name = document.getElementsByName('Name').value;
+  var age = document.getElementsByName('Age').value;
+  var fitnessLevel = document.getElementsByName('level').value;
+  var workoutLength = document.getElementsByName('length').value;
+  var workoutType = document.getElementsByName('type').value;
+  var goals = document.getElementsByName('goal').value;
+  var equipment = document.getElementsByName('equipment').value;
+  newPerson.push(name, age, fitnessLevel, workoutLength, workoutType, goals, equipment);
 }
+getFormData();
+console.log(newPerson);
 
 /*
 timer for result page
