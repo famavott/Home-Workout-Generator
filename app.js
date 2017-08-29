@@ -205,46 +205,49 @@ console.log(generatedWorkout);
 //
 //
 
+
+
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementsByName('Name')[0].value;
-  person.name = name;
-  var age = document.getElementsByName('Age')[0].value;
-  person.age = age;
-  newPerson.push(name, age);
+  var name = document.getElementsByName('name')[0].value;
+  user.name = name;
+  var age = document.getElementsByName('age')[0].value;
+  user.age = age;
+  // newPerson.push(name, age);
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
-      newPerson.push(fitnessLevel[i].value);
-      person.level = fitnessLevel[i].value;
+      // newPerson.push(fitnessLevel[i].value);
+      user.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
-      newPerson.push(workoutLength[i].value);
-      person.length = workoutLength[i].value;
+      // newPerson.push(workoutLength[i].value);
+      user.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
-      newPerson.push(workoutType[i].value);
-      person.type = workoutType[i].value;
+      // newPerson.push(workoutType[i].value);
+      user.type = workoutType[i].value;
     }
   }
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
-      newPerson.push(goals[i].value);
-      person.goal = goals[i].value;
+      // newPerson.push(goals[i].value);
+      user.goal = goals[i].value;
     }
   }
+  debugger;
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
-      newPerson.push(equipment[i].value);
-      person.equipment = equipment[i].value;
+      // newPerson.push(equipment[i].value);
+      user.equipment = equipment[i].value;
     }
   }
   genUserWorkout();
@@ -253,6 +256,7 @@ function getFormData (event) {
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
+
 
 /*
 timer for result page
