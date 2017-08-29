@@ -228,7 +228,7 @@ function toObject(array) {
   return person;
 }
 // toObject(newPerson);
-// function person(name, age, level, length, type,
+// function person(newPerson[0], newPerson[1], level, length, type,
 // goal, equipment) {
 //   this.name = name;
 //   this.age = age;
