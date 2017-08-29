@@ -37,7 +37,7 @@ function pickTotalBody(){
   localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 //Test Object for user
-var user = {type: 'Lower', level:'Intermediate', equipment: false};
+// var user = {type: 'Total', level:'Advanced', equipment: false, length: '20min'};
 
 /*
 if user wants upper body workout sort through array of workouts to find type = upperBody
@@ -80,7 +80,7 @@ var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total'
 var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman];
 var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks];
 var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup];
-var core = [crunch, russianTwist, Vup, legRaise, plank];
+var core = [crunch, russianTwist, vUp, legRaise, plank];
 
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
@@ -163,18 +163,39 @@ function filterWorkouts(user, typeArray){
 
 if (user.type === 'Upper'){
   workoutOptions = filterWorkouts(user, upperBody);
-}else if (user.type === 'Lower'){
+} else if (user.type === 'Lower') {
   workoutOptions = filterWorkouts(user, lowerBody);
-}else{
+} else {
   workoutOptions = filterWorkouts(user, totalBody);
 }
-
-if (user.type === 'Upper'){
-  pickUpperBody();
-}else if (user.type === 'Lower'){
-  pickLowerBody();
-}else {
-  pickTotalBody();
+//Code below selects workouts based on type and duration of workout
+// if (user.type === 'Upper') {
+//   pickUpperBody();
+// } else if (user.type === 'Lower') {
+//   pickLowerBody();
+// } else {
+//   pickTotalBody();
+// }
+if (user.length === '10min' || user.length === '30min') {
+  if (user.type === 'Upper') {
+    pickUpperBody();
+  } else if (user.type === 'Lower') {
+    pickLowerBody();
+  } else {
+    pickTotalBody();
+  }
+}
+else if (user.length === '20min' || user.length === '40min' ) {
+  if (user.type === 'Upper') {
+    pickUpperBody();
+    pickUpperBody();
+  } else if (user.type === 'Lower') {
+    pickLowerBody();
+    pickLowerBody();
+  } else {
+    pickTotalBody();
+    pickTotalBody();
+  }
 }
 console.log(generatedWorkout);
 
