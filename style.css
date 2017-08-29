@@ -54,13 +54,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a4c5f', end
 .formHeader {
   text-align: center;
 }
-.workoutFrame {
+
+#workoutResults1, #workoutResults2, #workoutResults3, #workoutResults4, #workoutResults5, #workoutResults6 {
   width: 50%;
   height: 300px;
   margin-left: 5%;
   margin-right: 5%;
-  border: 1px solid black;
 }
+
 .iframeSizing {
   width: 400px;
   height: 250px;

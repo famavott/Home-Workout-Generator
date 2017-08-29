@@ -37,7 +37,7 @@ function pickTotalBody(){
   localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 //Test Object for user
-var user = {type: 'Upper', level:'Intermediate', equipment: false};
+var user = {type: 'Lower', level:'Intermediate', equipment: false};
 
 /*
 if user wants upper body workout sort through array of workouts to find type = upperBody
@@ -256,6 +256,13 @@ function createWorkoutPage() {
     video.setAttribute('class', 'iframeSizing');
     video.src = resultsPage[i].img;
     workoutContainer.appendChild(video);
+  }
+  for(var i = 0; i < resultsPage.length; i++){
+    var workoutContainer = document.getElementById(workoutId[i]);
+    var iframeDesc = document.createElement('p');
+    iframeDesc.setAttribute('class', 'description');
+    iframeDesc.innerHTML = resultsPage[i].descr;
+    workoutContainer.appendChild(iframeDesc);
   }
 }
 createWorkoutPage();
