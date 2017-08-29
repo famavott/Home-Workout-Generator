@@ -177,43 +177,48 @@ console.log(generatedWorkout);
 //
 
 
-
-
 var newPerson = [];
 
 function getFormData (event) {
   event.preventDefault();
   var name = document.getElementsByName('Name')[0].value;
+  person.name = name;
   var age = document.getElementsByName('Age')[0].value;
+  person.age = age;
   newPerson.push(name, age);
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
       newPerson.push(fitnessLevel[i].value);
+      person.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
       newPerson.push(workoutLength[i].value);
+      person.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
       newPerson.push(workoutType[i].value);
+      person.type = workoutType[i].value;
     }
   }
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
       newPerson.push(goals[i].value);
+      person.goal = goals[i].value;
     }
   }
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
       newPerson.push(equipment[i].value);
+      person.equipment = equipment[i].value;
     }
   }
 }
@@ -221,23 +226,9 @@ function getFormData (event) {
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
-function toObject(array) {
-  var user = new person();
-  for (var i = 0; i < array.length; ++i)
-    person[i] = array[i];
-  return person;
-}
-// toObject(newPerson);
-// function person(name, age, level, length, type,
-// goal, equipment) {
-//   this.name = name;
-//   this.age = age;
-//   this.level = level;
-//   this.length = length;
-//   this.type = type;
-//   this.goal = goal;
-//   this.equipment = equipment;
-// }
+var person = {
+  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
+};
 
 /*
 timer for result page
@@ -246,6 +237,7 @@ timer for result page
 //   var getElementById('workoutTimer');
 //
 // }
+
 var resultsPage = [];
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
