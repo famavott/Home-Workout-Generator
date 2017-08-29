@@ -250,6 +250,7 @@ function getFormData (event) {
       person.equipment = equipment[i].value;
     }
   }
+  window.location = 'result.html';
 }
 
 document.getElementById('clickMe');
