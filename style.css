@@ -1,3 +1,15 @@
+
+body {
+  color: rgb(246, 247, 250);
+  background: -moz-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(1%, rgba(58,76,95,0.2)), color-stop(12%, rgba(58,76,95,0.46)), color-stop(34%, rgba(58,76,95,0.76)), color-stop(51%, rgba(85,103,113,1)), color-stop(95%, rgba(157,176,163,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* opera 11.10+ */
+background: -ms-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* ie10+ */
+background: linear-gradient(54deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a4c5f', endColorstr='#9DB0A3',GradientType=1 ); /* ie6-9 */
+
+}
 .bannerImg {
   width: 100%;
   position:fixed;
@@ -26,6 +38,7 @@
   border: 1px solid black;
 }
 .goToPage2 {
+  display: inline;
   border: 1px solid black;
   padding: 30px;
   border-radius: 15%;
@@ -41,13 +54,14 @@
 .formHeader {
   text-align: center;
 }
-.workoutFrame {
+
+#workoutResults1, #workoutResults2, #workoutResults3, #workoutResults4, #workoutResults5, #workoutResults6 {
   width: 50%;
   height: 300px;
   margin-left: 5%;
   margin-right: 5%;
-  border: 1px solid black;
 }
+
 .iframeSizing {
   width: 400px;
   height: 250px;
@@ -57,4 +71,14 @@
   float:left;
 }
 .description {
+}
+
+#continueButton {
+  box-shadow: 9px 6px 20px #9DB0A3;
+  background-color: rgb(58, 76, 95);
+  color: rgb(246, 247, 250);
+
+}
+ a {
+  text-decoration: none;
 }
