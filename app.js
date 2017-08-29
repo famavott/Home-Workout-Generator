@@ -34,7 +34,7 @@ function pickTotalBody(){
   }
 }
 //Test Object for user
-var user = {type: 'Upper', level:'Beginner', equipment: false};
+var user = {type: 'Upper', level:'Intermediate', equipment: false};
 
 /*
 if user wants upper body workout sort through array of workouts to find type = upperBody
@@ -42,7 +42,7 @@ if user wants upper body workout sort through array of workouts to find type = u
 */
 
 //Upper body - chest
-var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, '<iframe width="560" height="315" src="https://www.youtube.com/embed/wc-W05Gi9hU" frameborder="0" allowfullscreen></iframe>', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
+var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
 var regPushup = new MakeWorkout('Regular Push-up', 'Upper', 'Intermediate', false, false, 'chest', 'https://www.youtube.com/embed/v9LABVJzv8A', 'A classic calisthenic exercise that works the chest, triceps, shoulders, and core by raising and lowering the body towards the ground.');
 var diamondPushup = new MakeWorkout('Narrow/Diamond Push-up', 'Upper', 'Advanced', false, false, 'chest', 'https://www.youtube.com/embed/SwoNNo4W1OU', 'A more challenging version of the push-up that works the more than normal push-ups.');
 //Upper body - shoulder/arms
@@ -66,14 +66,14 @@ var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', false, tr
 var mountainClimber = new MakeWorkout('Mountain Climber', 'Total', 'Intermediate', false, true, 'Total', 'https://www.youtube.com/embed/w2iTOneGPdU', 'A great total body exercise that heavily utilizes the core, and can be a difficult cardiovascular exercise.');
 var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 
-var upperBody = [pushup];
-var lowerBody = [squat, lunge, pistol];
-var totalBody = [burpee, jumpingJack];
-var core = [crunch, russianTwist];
+var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand];
+var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol];
+var totalBody = [burpee, jumpingJack, mountainClimber];
+var core = [crunch, russianTwist, legRaise];
 
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
-  return core[random];
+  generatedWorkout.push(core[randoNum]);
 }
 
 function pickShouldersArms() {
@@ -180,6 +180,7 @@ if (user.type === 'Upper'){
 }else {
   pickTotalBody();
 }
+console.log(generatedWorkout);
 
 
 /*  Kavdi's area... DON"T TOUCH!!   */
