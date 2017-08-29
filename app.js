@@ -41,22 +41,34 @@ if user wants upper body workout sort through array of workouts to find type = u
 
 */
 
-////Initial Instances////////
-var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', false, false, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
-var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
-var snatch = new MakeWorkout('Snatch', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a barbell or dumbbell from the ground to overhead.');
-var pushup = new MakeWorkout('Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/v9LABVJzv8A', 'A classic calisthenic exercise that works the chest, triceps, shoulders, and core by raising and lowering the body towards the ground.');
-var pullup = new MakeWorkout('Pull-up', 'Upper', 'Intermediate', true, false, 'shoulders_arms', 'https://www.youtube.com/embed/aAggnpPyR6E', 'A compound upper-body exercise with palms facing forward on the bar.');
-var shoulderPress = new MakeWorkout('Shoulder Press', 'Upper', 'Intermediate', true, false, 'shoulder_arms', 'https://www.youtube.com/embed/xe19t2_6yis', 'Can be performed either seated or standing, and can be done with a barbell or dumbbells. A great test of overhead pressing strength.' );
-var squat = new MakeWorkout('Squats', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/ultWZbUMPL8', 'A classic athletic exercise that works the entire body. Can be done with a barbell, kettlebell, dumbbells, or as a bodyweight exercise.');
+//Upper body - chest
+var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, '<iframe width="560" height="315" src="https://www.youtube.com/embed/wc-W05Gi9hU" frameborder="0" allowfullscreen></iframe>', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
+var regPushup = new MakeWorkout('Regular Push-up', 'Upper', 'Intermediate', false, false, 'chest', 'https://www.youtube.com/embed/v9LABVJzv8A', 'A classic calisthenic exercise that works the chest, triceps, shoulders, and core by raising and lowering the body towards the ground.');
+var diamondPushup = new MakeWorkout('Narrow/Diamond Push-up', 'Upper', 'Advanced', false, false, 'chest', 'https://www.youtube.com/embed/SwoNNo4W1OU', 'A more challenging version of the push-up that works the more than normal push-ups.');
+//Upper body - shoulder/arms
+var shoulderTaps = new MakeWorkout('Shoulder Taps', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/gWHQpMUd7vw', 'Works the deltoids, triceps, and core by forcing you to stabilize your body and touch your hand to the opposite shoulder.');
+var dips = new MakeWorkout('Dips', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/vhXqTx7JYSs', 'Dips work your shoulders, arms, and chest, and can be done with a dip bar, bench, or chair.');
+var handstand = new MakeWorkout('Handstand Push-up', 'Upper', 'Advanced', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/hvoQiF0kBI8', 'A very difficult gymnastics and strength move. Descend until the head touches the ground, brace the core, and push with the shoulders and arms.');
+//Lower body - glutes
+var gluteBridge = new MakeWorkout('Glute Bridge', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/N48d7sm8dbU', 'Strengthens the glutes, and increases glute activation with no equipment necessary.');
+var squat = new MakeWorkout('Air Squats', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/C_VtOYc6j5c', 'A classic athletic exercise that works most of the lower body, and is the foundation for any workout program.');
+var deadlift = new MakeWorkout('Glute Bridge', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/HtHxnWmMgzM', 'A great move that develops balance, as well as hamstring and glue strength. Can be done with or without weights.');
+//Lower body - quad
 var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', false, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles.');
+var boxJump = new MakeWorkout('Box Jump', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/52r_Ul5k03g', 'Great for improving athleticism and muscle that can become a challenging cardiovascular workout.');
 var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', false, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'This advanced move requires flexibility, strength, balance, and coordination. This move can help build tremendous lower body strength.');
+//Core
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
-var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/l2XsG9W5rYo', 'This exercise strengthens the obliques, and can be performed with or without weight.');
+var legRaise = new MakeWorkout('Leg Raises', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/_OQaO65Vdzs', 'This exercise targets the abdominals and hip flexors, and will help to sculpt the core.');
+var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Advanced', false, false, 'core', 'https://www.youtube.com/embed/l2XsG9W5rYo', 'This exercise strengthens the obliques, and can be performed with or without weight.');
+//Total body
+var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
+var mountainClimber = new MakeWorkout('Mountain Climber', 'Total', 'Intermediate', false, true, 'Total', 'https://www.youtube.com/embed/w2iTOneGPdU', 'A great total body exercise that heavily utilizes the core, and can be a difficult cardiovascular exercise.');
+var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 
-var upperBody = [pushup, pullup, shoulderPress];
+var upperBody = [pushup];
 var lowerBody = [squat, lunge, pistol];
-var totalBody = [burpee, jumpingJack, snatch];
+var totalBody = [burpee, jumpingJack];
 var core = [crunch, russianTwist];
 
 function pickCore() {
@@ -190,13 +202,13 @@ var newPerson = [];
 
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementById('one').value;
-  var age = document.getElementById('two').value;
-  var fitnessLevel = document.getElementById('three').value;
-  var workoutLength = document.getElementById('four').value;
-  var workoutType = document.getElementById('five').value;
-  var goals = document.getElementById('six').value;
-  var equipment = document.getElementById('seven').value;
+  var name = document.getElementsByName('Name').value;
+  var age = document.getElementsByName('Age').value;
+  var fitnessLevel = document.queryselector('input[name = level]:checked').value;
+  var workoutLength = document.queryselector().value;
+  var workoutType = document.queryselector().value;
+  var goals = document.queryselector().value;
+  var equipment = document.queryselector().value;
   newPerson.push(name, age, fitnessLevel, workoutLength, workoutType, goals, equipment);
 }
 
