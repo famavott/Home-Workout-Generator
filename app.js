@@ -274,11 +274,16 @@ var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'worko
 function createWorkoutPage() {
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   for(var i = 0; i < resultsPage.length; i++){
-    var workoutContainer = document.getElementById(workoutId[i]);
+    var workoutContainer = document.getElementById('workoutResults');
+    var vidContainer = document.createElement('div');
+    vidContainer.setAttribute('class', 'workoutFrame');
+    vidContainer.setAttribute('id', workoutId[i]);
     var video = document.createElement('iframe');
     video.setAttribute('class', 'iframeSizing');
     video.src = resultsPage[i].img;
-    workoutContainer.appendChild(video);
+    workoutContainer.appendChild(vidContainer);
+    vidContainer.appendChild(video);
+
   }
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById(workoutId[i]);
