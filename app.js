@@ -41,6 +41,7 @@ if user wants upper body workout sort through array of workouts to find type = u
 
 */
 
+
 ////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', false, false, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
@@ -144,6 +145,21 @@ if (user.type === 'Upper'){
   workoutOptions = filterWorkouts(user, totalBody);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (user.type === 'Upper'){
   pickUpperBody();
 }else if (user.type === 'Lower'){
@@ -151,6 +167,7 @@ if (user.type === 'Upper'){
 }else {
   pickTotalBody();
 }
+
 
 /*  Kavdi's area... DON"T TOUCH!!   */
 
@@ -170,22 +187,21 @@ if (user.type === 'Upper'){
 
 var newPerson = [];
 
-document.getElementById('clickMe');
-document.addEventListener('submit', 'clickMe');
-
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementsByName('Name').value;
-  var age = document.getElementsByName('Age').value;
-  var fitnessLevel = document.getElementsByName('level').value;
-  var workoutLength = document.getElementsByName('length').value;
-  var workoutType = document.getElementsByName('type').value;
-  var goals = document.getElementsByName('goal').value;
-  var equipment = document.getElementsByName('equipment').value;
+  var name = document.getElementById('one').value;
+  var age = document.getElementById('two').value;
+  var fitnessLevel = document.getElementById('three').value;
+  var workoutLength = document.getElementById('four').value;
+  var workoutType = document.getElementById('five').value;
+  var goals = document.getElementById('six').value;
+  var equipment = document.getElementById('seven').value;
   newPerson.push(name, age, fitnessLevel, workoutLength, workoutType, goals, equipment);
 }
-getFormData();
-console.log(newPerson);
+
+document.getElementById('clickMe');
+document.addEventListener('submit', getFormData);
+
 
 /*
 timer for result page
