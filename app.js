@@ -189,13 +189,13 @@ var newPerson = [];
 
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementById('one').value;
-  var age = document.getElementById('two').value;
-  var fitnessLevel = document.getElementById('three').value;
-  var workoutLength = document.getElementById('four').value;
-  var workoutType = document.getElementById('five').value;
-  var goals = document.getElementById('six').value;
-  var equipment = document.getElementById('seven').value;
+  var name = document.getElementsByName('Name').value;
+  var age = document.getElementsByName('Age').value;
+  var fitnessLevel = document.queryselector('input[name = level]:checked').value;
+  var workoutLength = document.queryselector().value;
+  var workoutType = document.queryselector().value;
+  var goals = document.queryselector().value;
+  var equipment = document.queryselector().value;
   newPerson.push(name, age, fitnessLevel, workoutLength, workoutType, goals, equipment);
 }
 
