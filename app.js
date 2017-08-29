@@ -32,7 +32,7 @@ if user wants upper body workout sort through array of workouts to find type = u
 
 */
 
-=======
+// =======
 var workoutOptions = [];
 var generatedWorkout = [];
 
@@ -125,7 +125,7 @@ function filterWorkouts(user, typeArray){
 
 
 
-*/
+
 
 /*  Kavdi's area... DON"T TOUCH!!   */
 
@@ -145,22 +145,21 @@ function filterWorkouts(user, typeArray){
 
 var newPerson = [];
 
-document.getElementById('clickMe');
-document.addEventListener('submit', 'clickMe');
-
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementsByName('Name').value;
-  var age = document.getElementsByName('Age').value;
-  var fitnessLevel = document.getElementsByName('level').value;
-  var workoutLength = document.getElementsByName('length').value;
-  var workoutType = document.getElementsByName('type').value;
-  var goals = document.getElementsByName('goal').value;
-  var equipment = document.getElementsByName('equipment').value;
+  var name = document.getElementById('one').value;
+  var age = document.getElementById('two').value;
+  var fitnessLevel = document.getElementById('three').value;
+  var workoutLength = document.getElementById('four').value;
+  var workoutType = document.getElementById('five').value;
+  var goals = document.getElementById('six').value;
+  var equipment = document.getElementById('seven').value;
   newPerson.push(name, age, fitnessLevel, workoutLength, workoutType, goals, equipment);
 }
-getFormData();
-console.log(newPerson);
+
+document.getElementById('clickMe');
+document.addEventListener('submit', getFormData);
+
 
 /*
 timer for result page
