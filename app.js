@@ -80,7 +80,7 @@ var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total'
 var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman];
 var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks];
 var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup];
-var core = [crunch, russianTwist, Vup, legRaise, plank];
+var core = [crunch, russianTwist, vUp, legRaise, plank];
 
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
@@ -253,11 +253,16 @@ var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'worko
 function createWorkoutPage() {
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   for(var i = 0; i < resultsPage.length; i++){
-    var workoutContainer = document.getElementById(workoutId[i]);
+    var workoutContainer = document.getElementById('workoutResults');
+    var vidContainer = document.createElement('div');
+    vidContainer.setAttribute('class', 'workoutFrame');
+    vidContainer.setAttribute('id', workoutId[i]);
     var video = document.createElement('iframe');
     video.setAttribute('class', 'iframeSizing');
     video.src = resultsPage[i].img;
-    workoutContainer.appendChild(video);
+    workoutContainer.appendChild(vidContainer);
+    vidContainer.appendChild(video);
+
   }
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById(workoutId[i]);
