@@ -234,9 +234,11 @@ function getFormData (event) {
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
+
 var person = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
 };
+
 
 /*
 timer for result page
