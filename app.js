@@ -34,13 +34,12 @@ function pickTotalBody(){
   }
 }
 //Test Object for user
-var user = {type: 'Upper', level:'Intermediate', equipment: false};
+var user = {type: 'Upper', level:'Beginner', equipment: false};
 
 /*
 if user wants upper body workout sort through array of workouts to find type = upperBody
 
 */
-
 
 ////Initial Instances////////
 var burpee = new MakeWorkout('Burpee', 'Total', 'Intermediate', false, false, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
@@ -79,6 +78,8 @@ function pickShouldersArms() {
 function pickChest() {
   for (var i = 0; i < 1; i++){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
+    console.log(randoNum);
+
     if (workoutOptions[randoNum].group === 'chest'){
       generatedWorkout.push(workoutOptions[randoNum]);
     }else {
