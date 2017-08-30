@@ -1,6 +1,6 @@
 'use strict';
 
-var workouts = []; //might not need
+// var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
 var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
@@ -27,14 +27,12 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
-  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
-  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickTotalBody(){
@@ -42,7 +40,6 @@ function pickTotalBody(){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
     generatedWorkout.push(totalBody[i]); //this could duplicate exercises
   }
-  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 //Upper body - chest
@@ -240,6 +237,7 @@ function getFormData (event) {
       user.type = workoutType[i].value;
     }
   }
+
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
@@ -248,14 +246,14 @@ function getFormData (event) {
   }
 
   var equipment = document.getElementsByName('equipment');
-  for (var i = 0; i < equipment.length; i++){
-    if (equipment[i].checked){
-      user.equipment = equipment[i].value;
-    }
+
+  if (equipment[0].checked){
+    user.equipment = true;
+  }else{
+    user.equipment = false;
   }
   // debugger;
   genUserWorkout();
-  // createWorkoutPage();
   window.location = 'result.html';
 
 }
