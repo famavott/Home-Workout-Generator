@@ -7,6 +7,11 @@ var message10Min = 'Complete the three exercises below as a circuit, completing 
 var message20Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
 var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var resultsPage = [];
+var newPerson = [];
+var user = {
+  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
+};
 
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
@@ -23,14 +28,14 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickTotalBody(){
@@ -38,7 +43,7 @@ function pickTotalBody(){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
     generatedWorkout.push(totalBody[i]); //this could duplicate exercises
   }
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 //Test Object for user
 // var user = {type: 'Total', level:'Advanced', equipment: false, length: '20min'};
@@ -165,105 +170,94 @@ function filterWorkouts(user, typeArray){
   return newWorkouts;
 }
 
-if (user.type === 'Upper'){
-  workoutOptions = filterWorkouts(user, upperBody);
-} else if (user.type === 'Lower') {
-  workoutOptions = filterWorkouts(user, lowerBody);
-} else {
-  workoutOptions = filterWorkouts(user, totalBody);
-}
-//Code below selects workouts based on type and duration of workout
-// if (user.type === 'Upper') {
-//   pickUpperBody();
-// } else if (user.type === 'Lower') {
-//   pickLowerBody();
-// } else {
-//   pickTotalBody();
-// }
-if (user.length === '10min' || user.length === '30min') {
-  if (user.type === 'Upper') {
-    pickUpperBody();
+function genUserWorkout(){
+  if (user.type === 'Upper'){
+    workoutOptions = filterWorkouts(user, upperBody);
   } else if (user.type === 'Lower') {
-    pickLowerBody();
+    workoutOptions = filterWorkouts(user, lowerBody);
   } else {
-    pickTotalBody();
+    workoutOptions = filterWorkouts(user, totalBody);
   }
-}
-else if (user.length === '20min' || user.length === '40min' ) {
-  if (user.type === 'Upper') {
-    pickUpperBody();
-    pickUpperBody();
-  } else if (user.type === 'Lower') {
-    pickLowerBody();
-    pickLowerBody();
-  } else {
-    pickTotalBody();
-    pickTotalBody();
+
+  if (user.length === '10min' || user.length === '30min') {
+    if (user.type === 'Upper') {
+      pickUpperBody();
+    } else if (user.type === 'Lower') {
+      pickLowerBody();
+    } else {
+      pickTotalBody();
+    }
   }
+  else if (user.length === '20min' || user.length === '40min' ) {
+    if (user.type === 'Upper') {
+      pickUpperBody();
+      pickUpperBody();
+    } else if (user.type === 'Lower') {
+      pickLowerBody();
+      pickLowerBody();
+    } else {
+      pickTotalBody();
+      pickTotalBody();
+    }
+  }
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 console.log(generatedWorkout);
-
 
 //
 // /*  Kavdi's area... DON"T TOUCH!!   */
 //
 //
 
-
-var newPerson = [];
-
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementsByName('Name')[0].value;
-  person.name = name;
-  var age = document.getElementsByName('Age')[0].value;
-  person.age = age;
-  newPerson.push(name, age);
+  var name = document.getElementsByName('name')[0].value;
+  user.name = name;
+  var age = document.getElementsByName('age')[0].value;
+  user.age = age;
+  // newPerson.push(name, age);
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
-      newPerson.push(fitnessLevel[i].value);
-      person.level = fitnessLevel[i].value;
+      // newPerson.push(fitnessLevel[i].value);
+      user.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
-      newPerson.push(workoutLength[i].value);
-      person.length = workoutLength[i].value;
+      // newPerson.push(workoutLength[i].value);
+      user.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
-      newPerson.push(workoutType[i].value);
-      person.type = workoutType[i].value;
+      // newPerson.push(workoutType[i].value);
+      user.type = workoutType[i].value;
     }
   }
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
-      newPerson.push(goals[i].value);
-      person.goal = goals[i].value;
+      // newPerson.push(goals[i].value);
+      user.goal = goals[i].value;
     }
   }
+  // debugger;
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
-      newPerson.push(equipment[i].value);
-      person.equipment = equipment[i].value;
+      // newPerson.push(equipment[i].value);
+      user.equipment = equipment[i].value;
     }
   }
+  genUserWorkout();
   window.location = 'result.html';
 }
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
-
-
-var person = {
-  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
-};
 
 
 /*
@@ -274,7 +268,6 @@ timer for result page
 //
 // }
 
-var resultsPage = [];
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
   workoutInstructions();
