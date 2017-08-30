@@ -8,6 +8,7 @@ var message20Min = 'Complete the six exercises below as a circuit, completing on
 var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var resultsPage = [];
+// var getUser = {};
 var user = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
 };
@@ -253,6 +254,7 @@ function getFormData (event) {
     user.equipment = false;
   }
   // debugger;
+  localStorage.setItem('userData', JSON.stringify(user));
   genUserWorkout();
   window.location = 'result.html';
 
@@ -271,8 +273,9 @@ timer for result page
 
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
-  workoutInstructions();
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
+  user = JSON.parse(localStorage.getItem('userData'));
+  workoutInstructions();
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById('workoutResults');
     var vidContainer = document.createElement('div');
