@@ -10,16 +10,18 @@
       <h1 class="mainTitle">Generate Your Workout</h1>
     </nav>
     <div class="formBox">
-      <hr/>
-      <h2 class="formHeader">Let's get started with making your workout, please answer these questions.</h2>
-      <hr/>
+      <div class="formTitle">
+        <hr/>
+        <h2 class="formHeader">Please answer the following questions for your personalized workout</h2>
+        <hr/>
+      </div>
     <div class="formInfo">
       <form id="workoutForm" action="form.html" method="post">
        <p>Name:
-         <input type="text" name="name" size="15" placeholder="input name" required="required">
+         <input type="text" name="name" size="15" placeholder="Name" required="required">
       </p>
        <p>Age:
-         <input type="number" name="age" placeholder="input age" required="required" min="15" max="100">
+         <input type="number" name="age" placeholder="Age" required="required" min="15" max="100">
        </p>
        <p>Fitness Level
          <input type="radio" name="level" value="Beginner" required>Beginner
