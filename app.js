@@ -5,7 +5,7 @@ var generatedWorkout = [];
 var workoutOptions = [];
 var resultsPage = [];
 var newPerson = [];
-var person = {
+var user = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
 };
 
@@ -205,8 +205,6 @@ console.log(generatedWorkout);
 //
 //
 
-
-
 function getFormData (event) {
   event.preventDefault();
   var name = document.getElementsByName('name')[0].value;
@@ -242,7 +240,7 @@ function getFormData (event) {
       user.goal = goals[i].value;
     }
   }
-  debugger;
+  // debugger;
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
