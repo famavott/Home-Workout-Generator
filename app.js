@@ -4,8 +4,7 @@ var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
 var resultsPage = [];
-var newPerson = [];
-var person = {
+var user = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
 };
 
@@ -213,40 +212,33 @@ function getFormData (event) {
   user.name = name;
   var age = document.getElementsByName('age')[0].value;
   user.age = age;
-  // newPerson.push(name, age);
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
-      // newPerson.push(fitnessLevel[i].value);
       user.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
-      // newPerson.push(workoutLength[i].value);
       user.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
-      // newPerson.push(workoutType[i].value);
       user.type = workoutType[i].value;
     }
   }
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
-      // newPerson.push(goals[i].value);
       user.goal = goals[i].value;
     }
   }
-  debugger;
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
-      // newPerson.push(equipment[i].value);
       user.equipment = equipment[i].value;
     }
   }
@@ -256,7 +248,6 @@ function getFormData (event) {
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
-
 
 /*
 timer for result page
