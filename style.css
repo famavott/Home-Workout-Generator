@@ -1,42 +1,41 @@
 
 body {
-  color: rgb(246, 247, 250);
-  background: -moz-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* ff3.6+ */
-background: -webkit-gradient(linear, left bottom, right top, color-stop(1%, rgba(58,76,95,0.2)), color-stop(12%, rgba(58,76,95,0.46)), color-stop(34%, rgba(58,76,95,0.76)), color-stop(51%, rgba(85,103,113,1)), color-stop(95%, rgba(157,176,163,1))); /* safari4+,chrome */
-background: -webkit-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* safari5.1+,chrome10+ */
-background: -o-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* opera 11.10+ */
-background: -ms-linear-gradient(36deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* ie10+ */
-background: linear-gradient(54deg, rgba(58,76,95,0.2) 1%, rgba(58,76,95,0.46) 12%, rgba(58,76,95,0.76) 34%, rgba(85,103,113,1) 51%, rgba(157,176,163,1) 95%); /* w3c */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a4c5f', endColorstr='#9DB0A3',GradientType=1 ); /* ie6-9 */
-
+background-image: url(images/workoutGirl.jpg);
 }
+
 .bannerImg {
   width: 100%;
   position:fixed;
   z-index: -1;
   left: 0px;
 }
+
 .mainTitle {
   text-align: center;
   text-decoration: underline;
 }
+
 .mainTextModify {
   margin-left: 5%;
   margin-right: 5%;
 }
+
 .testimonials {
   width: 40%;
   margin-left: 5%;
   float:left;
   border: 1px solid black;
 }
+
 .disclamer {
   color: red;
 }
+
 .cautionStatement {
   float:right;
   border: 1px solid black;
 }
+
 .goToPage2 {
   display: inline;
   border: 1px solid black;
@@ -45,12 +44,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a4c5f', end
   margin-left: 50%;
   width: 40px;
 }
+
 .formBox {
   width: 46%;
   margin-left: 27%;
   margin-right: 27%;
   text-align: left;
 }
+
 .formHeader {
   text-align: center;
 }

@@ -15,12 +15,12 @@
       <h2 class = "formHeader">Let's get started with making your workout, please answer these questions.
       </h2>
       <hr/>
-      <form id="workoutForm" action="index.html" method="post">
+      <form id="workoutForm" action="form.html" method="post">
        <p>Name:
-         <input type="text" name="Name" size="15" placeholder="input name" required="required">
+         <input type="text" name="name" size="15" placeholder="input name" required="required">
        </p>
        <p>Age:
-         <input type="number" name="Age" placeholder="input age" required="required" min="15" max="100">
+         <input type="number" name="age" placeholder="input age" required="required" min="15" max="100">
        </p>
        <p>Fitness Level
          <input type="radio" name="level" value="Beginner" required>Beginner
@@ -36,9 +36,9 @@
       </p>
       <p>Type of Workout
         <br>
-          <input type="radio" name="type" value="totalBody" required>Total Body
-          <input type="radio" name="type" value="upperBody" required>Upper Body
-          <input type="radio" name="type" value="lowerBody" required>Lower Body
+          <input type="radio" name="type" value="Total" required>Total Body
+          <input type="radio" name="type" value="Upper" required>Upper Body
+          <input type="radio" name="type" value="Lower" required>Lower Body
       </p>
       <p>Workout Goals:
         <br>
@@ -50,10 +50,10 @@
         <input type="checkbox" name="goal" value="muscleEndurance">Muscle Endurance
       </p>
       <p>Do you have access to equipment?
-        <input type="radio" name="equipment" value="yes" required>Yes
-        <input type="radio" name="equipment" value="no" required>No
+        <input type="radio" name="equipment" value="true" required>Yes
+        <input type="radio" name="equipment" value="false" required>No
       </p>
-      <input id="clickMe" type="submit" name="submit" value="Get Swoll">
+      <input id="clickMe" type="submit" name="submit" value="Get Swoll" >
       </form>
     </div>
     <footer>

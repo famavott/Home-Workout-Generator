@@ -3,6 +3,14 @@
 var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
+var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message20Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var resultsPage = [];
+var user = {
+  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
+};
 
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
@@ -19,14 +27,14 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickTotalBody(){
@@ -34,15 +42,8 @@ function pickTotalBody(){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
     generatedWorkout.push(totalBody[i]); //this could duplicate exercises
   }
-  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
-//Test Object for user
-var user = {type: 'Lower', level:'Intermediate', equipment: false};
-
-/*
-if user wants upper body workout sort through array of workouts to find type = upperBody
-
-*/
 
 //Upper body - chest
 var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
@@ -80,7 +81,7 @@ var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total'
 var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman];
 var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks];
 var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup];
-var core = [crunch, russianTwist, Vup, legRaise, plank];
+var core = [crunch, russianTwist, vUp, legRaise, plank];
 
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
@@ -161,109 +162,114 @@ function filterWorkouts(user, typeArray){
   return newWorkouts;
 }
 
-if (user.type === 'Upper'){
-  workoutOptions = filterWorkouts(user, upperBody);
-}else if (user.type === 'Lower'){
-  workoutOptions = filterWorkouts(user, lowerBody);
-}else{
-  workoutOptions = filterWorkouts(user, totalBody);
-}
+function genUserWorkout(){
+  if (user.type === 'Upper'){
+    workoutOptions = filterWorkouts(user, upperBody);
+  } else if (user.type === 'Lower') {
+    workoutOptions = filterWorkouts(user, lowerBody);
+  } else {
+    workoutOptions = filterWorkouts(user, totalBody);
+  }
 
-if (user.type === 'Upper'){
-  pickUpperBody();
-}else if (user.type === 'Lower'){
-  pickLowerBody();
-}else {
-  pickTotalBody();
+  if (user.length === '10min' || user.length === '30min') {
+    if (user.type === 'Upper') {
+      pickUpperBody();
+    } else if (user.type === 'Lower') {
+      pickLowerBody();
+    } else {
+      pickTotalBody();
+    }
+  }
+  else if (user.length === '20min' || user.length === '40min' ) {
+    if (user.type === 'Upper') {
+      pickUpperBody();
+      pickUpperBody();
+    } else if (user.type === 'Lower') {
+      pickLowerBody();
+      pickLowerBody();
+    } else {
+      pickTotalBody();
+      pickTotalBody();
+    }
+  }
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 console.log(generatedWorkout);
-
 
 //
 // /*  Kavdi's area... DON"T TOUCH!!   */
 //
 //
 
-
-
-
-var newPerson = [];
-
 function getFormData (event) {
   event.preventDefault();
-  var name = document.getElementsByName('Name')[0].value;
-  var age = document.getElementsByName('Age')[0].value;
-  newPerson.push(name, age);
+  var name = document.getElementsByName('name')[0].value;
+  user.name = name;
+  var age = document.getElementsByName('age')[0].value;
+  user.age = age;
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
-      newPerson.push(fitnessLevel[i].value);
+      user.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
-      newPerson.push(workoutLength[i].value);
+      user.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
-      newPerson.push(workoutType[i].value);
+      user.type = workoutType[i].value;
     }
   }
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
-      newPerson.push(goals[i].value);
+      user.goal = goals[i].value;
     }
   }
+
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
-      newPerson.push(equipment[i].value);
+      user.equipment = equipment[i].value;
     }
   }
+  // debugger;
+  genUserWorkout();
+  // createWorkoutPage();
+  window.location = 'result.html';
+
 }
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
-function toObject(array) {
-  var user = new person();
-  for (var i = 0; i < array.length; ++i)
-    person[i] = array[i];
-  return person;
-}
-// toObject(newPerson);
-// function person(name, age, level, length, type,
-// goal, equipment) {
-//   this.name = name;
-//   this.age = age;
-//   this.level = level;
-//   this.length = length;
-//   this.type = type;
-//   this.goal = goal;
-//   this.equipment = equipment;
-// }
-
 /*
 timer for result page
 */
 // function timer(time) {
-//   var getElementById('workoutTimer');
+//   var getElementById('workoutTimer');  er
 //
 // }
-var resultsPage = [];
+
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
+  workoutInstructions();
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   for(var i = 0; i < resultsPage.length; i++){
-    var workoutContainer = document.getElementById(workoutId[i]);
+    var workoutContainer = document.getElementById('workoutResults');
+    var vidContainer = document.createElement('div');
+    vidContainer.setAttribute('class', 'workoutFrame');
+    vidContainer.setAttribute('id', workoutId[i]);
     var video = document.createElement('iframe');
     video.setAttribute('class', 'iframeSizing');
     video.src = resultsPage[i].img;
-    workoutContainer.appendChild(video);
+    workoutContainer.appendChild(vidContainer);
+    vidContainer.appendChild(video);
   }
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById(workoutId[i]);
@@ -273,4 +279,27 @@ function createWorkoutPage() {
     workoutContainer.appendChild(iframeDesc);
   }
 }
-createWorkoutPage();
+// createWorkoutPage();
+function workoutInstructions() {
+  if(user.length === '10min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message10Min;
+    instructionsContainer.appendChild(instructions);
+  }else if(user.length === '20min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message20Min;
+    instructionsContainer.appendChild(instructions);
+  }else if(user.length === '30min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message30Min;
+    instructionsContainer.appendChild(instructions);
+  }else if (user.length === '40min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message40Min;
+    instructionsContainer.appendChild(instructions);
+  }
+};
