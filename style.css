@@ -1,16 +1,20 @@
-
-.imgBackground {
-background-image: url(images/workoutGirl.jpg);
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.mainPageInfo {
 position: absolute;
 width: 100%;
 height: 75%;
 left: 0px;
 z-index: -2;
+overflow: hidden;
 }
 .scrollFix {
-  overflow-y: scroll;
+  background-image: url(images/workoutGirl.jpg);
   overflow-x: hidden;
+  overflow-y: scroll;
   background-color: black;
+  margin: 0px;
 }
 .mainTitle {
   margin-left: 1%;
@@ -33,7 +37,7 @@ z-index: -2;
   filter:drop-shadow(6px 6px 6px black);
 }
 nav {
-  background-color: rgba(54, 65, 83, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -46,49 +50,33 @@ nav {
   margin-top: 15%;
   margin-left: 5%;
   width: 20%;
-  box-shadow: 5px 5px 2.5px rgb(181, 188, 196);
+  box-shadow: 8px 8px 10.5px rgb(144, 159, 177);
   border-radius: 8px;
 }
 .mainTextModifyH2 {
   text-decoration: underline;
 }
 .mainContent {
-  position: absolute;
-  top: 610px;
-  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
 }
-.testimonials {
-  background-color: #3C5695;
-  opacity: 0.6;
-  color: #F6F7FA;
-  padding: 10px;
-  width: 25%;
-  height: 250px;
-  overflow-y: scroll;
-  margin-left: 5%;
-  margin-right: 2.5%;
-  float:left;
-  border: 1px solid #3C5695;
-  border-radius: 6px;
-  float:left;
-}
+
 .testimonials::-webkit-scrollbar {
     display: none;
 }
-.workoutSize, .customized{
-  background-color: #3C5695;
-  opacity: 0.6;
+.workoutSize, .customized, .testimonials{
+  background-color: rgba(50, 62, 80, 0.9);
   color: #F6F7FA;
   padding: 10px;
-  width: 25%;
+  width: 20%;
   height: 250px;
   overflow-y: scroll;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  float:left;
+  margin: 3%;
   border: 1px solid #3C5695;
   border-radius: 6px;
-  float:left;
+  box-shadow: 8px 8px 10.5px rgb(144, 159, 177);
 }
 .workoutSize::-webkit-scrollbar {
     display: none;
@@ -109,9 +97,8 @@ nav {
   text-align: center;
 }
 .siteInfo {
-  position:absolute;
-  top: 900px;
   width: 100%;
+  background-color: black;
 }
 .formBox {
   width: 46%;
@@ -124,7 +111,7 @@ nav {
 
 .formHeader {
   text-align: center;
-  color: rgb(157, 176, 163);
+  color: rgb(144, 159, 177);
 }
 
 #workoutResults1, #workoutResults2, #workoutResults3, #workoutResults4, #workoutResults5, #workoutResults6 {
@@ -162,7 +149,7 @@ hr {
   margin: 0%;
 }
 #continueButton {
-  position:absolute;
+  position: absolute;
   width: 200px;
   text-align: center;
   top: 350px;
@@ -171,10 +158,10 @@ hr {
   box-shadow: 9px 6px 20px black;
   background-color: #3A4C5F;
   color: #F6F7FA;
-  border: 1px solid white;
+  border: 3px solid white;
   border-radius: 6px;
-  opacity: 0.65;
-  filter: invert(0%);
+  opacity: 0.8;
+  font-size: 25px;
 }
 #continueButton:hover {
   position:absolute;
@@ -186,10 +173,9 @@ hr {
   box-shadow: 9px 6px 20px black;
   background-color: #3A4C5F;
   color: #F6F7FA;
-  border: 1px solid white;
+  border: 4px solid white;
   border-radius: 6px;
   opacity: 1;
-  filter:invert(100%);
 }
  a {
   text-decoration: none;
@@ -207,7 +193,7 @@ hr {
 .formInfo {
   padding: 20px;
   font-family: 'Poppins', sans-serif;
-  color: rgb(157, 176, 163);
+  color: rgb(144, 159, 177);
   font-weight: 400;
 }
 
