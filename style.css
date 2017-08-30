@@ -60,10 +60,13 @@ nav {
   margin-left: 27%;
   margin-right: 27%;
   text-align: left;
+  position: absolute;
+  margin-top: 120px;
 }
 
 .formHeader {
   text-align: center;
+  color: rgb(157, 176, 163);
 }
 
 #workoutResults1, #workoutResults2, #workoutResults3, #workoutResults4, #workoutResults5, #workoutResults6 {
@@ -95,4 +98,21 @@ nav {
 }
  a {
   text-decoration: none;
+}
+
+.formBody {
+  background-image: url(images/Post-Image.jpg);
+}
+
+.formBox {
+}
+
+.formInfo {
+  padding: 20px;
+  font-weight: bold;
+  color: rgb(157, 176, 163);
+}
+
+.formTitle {
+  background-color: rgba(0, 0, 0, 0.7);
 }
