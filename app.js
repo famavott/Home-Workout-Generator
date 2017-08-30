@@ -3,6 +3,10 @@
 var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
+var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message20Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var resultsPage = [];
 var user = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
@@ -40,13 +44,6 @@ function pickTotalBody(){
   }
   // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
-//Test Object for user
-// var user = {type: 'Total', level:'Advanced', equipment: false, length: '20min'};
-
-/*
-if user wants upper body workout sort through array of workouts to find type = upperBody
-
-*/
 
 //Upper body - chest
 var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
@@ -204,8 +201,6 @@ console.log(generatedWorkout);
 //
 //
 
-
-
 function getFormData (event) {
   event.preventDefault();
   var name = document.getElementsByName('name')[0].value;
@@ -236,14 +231,18 @@ function getFormData (event) {
       user.goal = goals[i].value;
     }
   }
+
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
       user.equipment = equipment[i].value;
     }
   }
+  // debugger;
   genUserWorkout();
-  window.location = 'result.html';
+  // createWorkoutPage();
+  // window.location = 'result.html';
+
 }
 
 document.getElementById('clickMe');
@@ -253,12 +252,13 @@ document.addEventListener('submit', getFormData);
 timer for result page
 */
 // function timer(time) {
-//   var getElementById('workoutTimer');
+//   var getElementById('workoutTimer');  er
 //
 // }
 
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
+  workoutInstructions();
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById('workoutResults');
@@ -270,7 +270,6 @@ function createWorkoutPage() {
     video.src = resultsPage[i].img;
     workoutContainer.appendChild(vidContainer);
     vidContainer.appendChild(video);
-
   }
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById(workoutId[i]);
@@ -281,3 +280,26 @@ function createWorkoutPage() {
   }
 }
 createWorkoutPage();
+function workoutInstructions() {
+  if(user.length === '10min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message10Min;
+    instructionsContainer.appendChild(instructions);
+  }else if(user.length === '20min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message20Min;
+    instructionsContainer.appendChild(instructions);
+  }else if(user.length === '30min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message30Min;
+    instructionsContainer.appendChild(instructions);
+  }else if (user.length === '40min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message40Min;
+    instructionsContainer.appendChild(instructions);
+  }
+};
