@@ -1,6 +1,6 @@
 'use strict';
 
-var workouts = []; //might not need
+// var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
 var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
@@ -27,14 +27,12 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
-  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
-  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 function pickTotalBody(){
@@ -42,29 +40,40 @@ function pickTotalBody(){
     var randoNum = Math.floor(Math.random() * workoutOptions.length);
     generatedWorkout.push(totalBody[i]); //this could duplicate exercises
   }
-  // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
 
 //Upper body - chest
 var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
 var regPushup = new MakeWorkout('Regular Push-up', 'Upper', 'Intermediate', false, false, 'chest', 'https://www.youtube.com/embed/v9LABVJzv8A', 'A classic calisthenic exercise that works the chest, triceps, shoulders, and core by raising and lowering the body towards the ground.');
 var diamondPushup = new MakeWorkout('Narrow/Diamond Push-up', 'Upper', 'Advanced', false, false, 'chest', 'https://www.youtube.com/embed/SwoNNo4W1OU', 'A more challenging version of the push-up that works the more than normal push-ups.');
-//Upper body - shoulder/arms
+var benchPress = new MakeWorkout('Bench Press', 'Upper', 'Beginner', true, false, 'chest', 'https://www.youtube.com/embed/wzq57DB5Ppg', 'Increases upper-body pushing strength, explosiveness, and muscle growth. Can be done with a barbell or dumbbells.');
+var flys = new MakeWorkout('Standing Flys', 'Upper', 'Intermediate', true, false, 'chest', 'https://www.youtube.com/embed/iA2UnDfRMOw', 'Focus on isolating the chest muscles by bringing weights in and squeezing the chest. Can be done laying on a bench if available.');
+var weightedPushup = new MakeWorkout('Weighted Push-up', 'Upper', 'Advanced', true, false, 'chest', 'https://www.youtube.com/embed/22I56NRZ3cc', 'Make push-ups even more challenging by adding weight to your back. This can be done with a plate, backpack, or weighted vest.');
+// Upper body - shoulder/arms
 var shoulderTaps = new MakeWorkout('Shoulder Taps', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/gWHQpMUd7vw', 'Works the deltoids, triceps, and core by forcing you to stabilize your body and touch your hand to the opposite shoulder.');
 var superman = new MakeWorkout('Supermans', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/67rgxYNKbZY', 'Simultaneously lift your arms, legs, and chest, and contract at the top of the movement. This exercise can be a good compliment to core movements.');
 var dips = new MakeWorkout('Dips', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/vhXqTx7JYSs', 'Dips work your shoulders, arms, and chest, and can be done with a dip bar, bench, or chair.');
 var handstand = new MakeWorkout('Handstand Push-up', 'Upper', 'Advanced', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/hvoQiF0kBI8', 'A very difficult gymnastics and strength move. Descend until the head touches the ground, brace the core, and push with the shoulders and arms.');
+var curls = new MakeWorkout('Curls', 'Upper', 'Beginner', true, false, 'shoulders_arms', 'https://www.youtube.com/embed/av7-8igSXTs', 'Increase arm strength by doing curls with a barbell or dumbbells, bending at the elbow and concentrating on not swinging your body.');
+var shoulderPress = new MakeWorkout('Shoulder Press', 'Upper', 'Intermediate', true, false, 'shoulders_arms', 'https://www.youtube.com/embed/xe19t2_6yis', 'Can be performed either seated or standing, and can be done with a barbell or dumbbells. A great test over overhead pressing strength.');
+var pullup = new MakeWorkout('Pull-ups', 'Upper', 'Advanced', true, false, 'shoulders_arms', 'https://www.youtube.com/embed/aAggnpPyR6E', 'A compound upper-body exercise with palms facing forward on the bar.');
 //Lower body - glutes
 var gluteBridge = new MakeWorkout('Glute Bridge', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/N48d7sm8dbU', 'Strengthens the glutes, and increases glute activation with no equipment necessary.');
-var donkeykickbacks = new MakeWorkout('Donkey Kickbakcs', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/SJ1Xuz9D-ZQ', 'Targets each glute, and forced you to stabilize your core through the movement.');
+var donkeykickbacks = new MakeWorkout('Donkey Kickbakcs', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/SJ1Xuz9D-ZQ', 'Targets each glute, and forced you to stabilize your core through the movement.');
 var calfRaise = new MakeWorkout('Calf Raises', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/UV8gOrHmuKc', 'This builds muscle and tones the calves by lifting as high as you can onto your toes.');
-var squat = new MakeWorkout('Air Squats', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/C_VtOYc6j5c', 'A classic athletic exercise that works most of the lower body, and is the foundation for any workout program.');
-var deadlift = new MakeWorkout('Glute Bridge', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/HtHxnWmMgzM', 'A great move that develops balance, as well as hamstring and glue strength. Can be done with or without weights.');
+var airSquat = new MakeWorkout('Air Squats', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/C_VtOYc6j5c', 'A classic athletic exercise that works most of the lower body, and is the foundation for any workout program.');
+var deadlift = new MakeWorkout('Single-leg Deadlifts', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/HtHxnWmMgzM', 'A great move that develops balance, as well as hamstring and glute strength.');
+var gobletSquat = new MakeWorkout('Goblet Squats', 'Lower', 'Beginner', true, false, 'glutes', 'https://www.youtube.com/embed/lyvMNn9e2d4', 'Another variation of the squat that works most of the lower body, and can be done with a variety of different styles of weights.');
+var suitcaseDeadlift = new MakeWorkout('Suitcase Deadlifts', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/0WPVOzTwCi4', 'A great move that works the hamstrings and glutes, while forcing you to stabilize the core.');
+var splitSquat = new MakeWorkout('Bulgarian Split Squat', 'Lower', 'Advanced', true, false, 'glutes', 'https://www.youtube.com/embed/6wIId6pQzHw', 'A tough single-leg move that will add size to your legs and improve balance.');
 //Lower body - quad
 var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', false, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles.');
 var boxJump = new MakeWorkout('Box Jump', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/52r_Ul5k03g', 'Great for improving athleticism and muscle that can become a challenging cardiovascular workout.');
 var jumpLunge = new MakeWorkout('Jumping Lunges', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/Kq5lZ4o26Ho', 'Bring lunges to the next level by explosively jumping when transtioning between legs.');
 var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', false, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'This advanced move requires flexibility, strength, balance, and coordination. This move can help build tremendous lower body strength.');
+var weightedLunge = new MakeWorkout('Weighted Lunge', 'Lower', 'Beginner', true, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles. Use dumbells, kettlebells, or whatever is available to you to add weight.');
+var weightedSideLunge = new MakeWorkout('Weighted Side Lunges', 'Lower', 'Intermediate', true, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'Works the quads, glutes, adductors, and other smaller stabilizer muscles. Focus on collapsing at the hip and sitting into the lunge.');
+var weightedJumpLunge = new MakeWorkout('Weighted Jumping Lunge', 'Lower', 'Advanced', true, true, 'quads', 'https://www.youtube.com/embed/grID4CMcPdA', 'Explode out of each lunge by jumping and switching legs, keeping the back straight, and controlling the descent of your rear knee to the ground.');
 //Core
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var legRaise = new MakeWorkout('Leg Raises', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/_OQaO65Vdzs', 'This exercise targets the abdominals and hip flexors, and will help to sculpt the core.');
@@ -77,10 +86,13 @@ var bearcrawl = new MakeWorkout('Bear Crawl', 'Total', 'Beginner', false, true, 
 var mountainClimber = new MakeWorkout('Mountain Climber', 'Total', 'Intermediate', false, true, 'Total', 'https://www.youtube.com/embed/w2iTOneGPdU', 'A great total body exercise that heavily utilizes the core, and can be a difficult cardiovascular exercise.');
 var spidermanPushup = new MakeWorkout('Spiderman Push-up', 'Total', 'Advanced', false, false, 'Total', 'https://www.youtube.com/embed/hWVf7gt5dQ8', 'An advanced version of the push-up that will work the chest, triceps, shoulders, core, and hip flexors. Go slow and focus on the form.');
 var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
+var kbellSwing = new MakeWorkout('KettleBell Swings', 'Total', 'Beginner', true, true, 'Total', 'https://www.youtube.com/embed/OPcG_thX6Dc', 'Develops power in your hamstrings, glutes, core, and will get your heart rate up in no time. Focus on the hip hinge and being explosive.');
+var thrusters = new MakeWorkout('Thrusters', 'Total', 'Intermediate', true, true, 'Total', 'https://www.youtube.com/embed/M5gEwLTtWbg', 'Combines a front squat with an overhead press. A great compound exercise that works the whole body.');
+var snatch = new MakeWorkout('Single-arm Snatch', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a dumbbell, kettlebell, or barbell from the ground to overhead.');
 
-var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman];
-var lowerBody = [gluteBridge, squat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks];
-var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup];
+var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman, benchPress, flys, weightedPushup, curls, shoulderPress, pullup];
+var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge];
+var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing, thrusters, snatch];
 var core = [crunch, russianTwist, vUp, legRaise, plank];
 
 function pickCore() {
@@ -225,24 +237,23 @@ function getFormData (event) {
       user.type = workoutType[i].value;
     }
   }
+
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
-      // newPerson.push(goals[i].value);
       user.goal = goals[i].value;
     }
   }
-  // debugger;
+
   var equipment = document.getElementsByName('equipment');
-  for (var i = 0; i < equipment.length; i++){
-    if (equipment[i].checked){
-      // newPerson.push(equipment[i].value);
-      user.equipment = equipment[i].value;
-    }
+
+  if (equipment[0].checked){
+    user.equipment = true;
+  }else{
+    user.equipment = false;
   }
   // debugger;
   genUserWorkout();
-  // createWorkoutPage();
   window.location = 'result.html';
 
 }
