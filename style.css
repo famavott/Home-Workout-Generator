@@ -117,15 +117,27 @@ nav {
 }
 
 #workoutResults1, #workoutResults2, #workoutResults3, #workoutResults4, #workoutResults5, #workoutResults6 {
-  width: 50%;
-  height: 300px;
+  width: 35%;
+  height: 180px;
+  background-color: white;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 10px;
+  border: thin black solid;
+}
+
+#instructions{
+  margin-top: 88px;
+}
+
+#resultsPage {
+  background-image: url('images/robot.jpg');
+  background-repeat: no-repeat;
 }
 
 .iframeSizing {
-  width: 400px;
-  height: 250px;
+  width: 300px;
+  /*height: 250px;*/
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
