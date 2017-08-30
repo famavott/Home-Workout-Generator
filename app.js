@@ -74,6 +74,9 @@ var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', false, false, 'quads',
 var boxJump = new MakeWorkout('Box Jump', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/52r_Ul5k03g', 'Great for improving athleticism and muscle that can become a challenging cardiovascular workout.');
 var jumpLunge = new MakeWorkout('Jumping Lunges', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/Kq5lZ4o26Ho', 'Bring lunges to the next level by explosively jumping when transtioning between legs.');
 var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', false, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'This advanced move requires flexibility, strength, balance, and coordination. This move can help build tremendous lower body strength.');
+var weightedLunge = new MakeWorkout('Weighted Lunge', 'Lower', 'Beginner', true, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles. Use dumbells, kettlebells, or whatever is available to you to add weight.');
+var weightedSideLunge = new MakeWorkout('Weighted Side Lunges', 'Lower', 'Intermediate', true, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'Works the quads, glutes, adductors, and other smaller stabilizer muscles. Focus on collapsing at the hip and sitting into the lunge.');
+var weightedJumpLunge = new MakeWorkout('Weighted Jumping Lunge', 'Lower', 'Advanced', true, true, 'quads', 'https://www.youtube.com/embed/grID4CMcPdA', 'Explode out of each lunge by jumping and switching legs, keeping the back straight, and controlling the descent of your rear knee to the ground.');
 //Core
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var legRaise = new MakeWorkout('Leg Raises', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/_OQaO65Vdzs', 'This exercise targets the abdominals and hip flexors, and will help to sculpt the core.');
@@ -87,10 +90,12 @@ var mountainClimber = new MakeWorkout('Mountain Climber', 'Total', 'Intermediate
 var spidermanPushup = new MakeWorkout('Spiderman Push-up', 'Total', 'Advanced', false, false, 'Total', 'https://www.youtube.com/embed/hWVf7gt5dQ8', 'An advanced version of the push-up that will work the chest, triceps, shoulders, core, and hip flexors. Go slow and focus on the form.');
 var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total', 'https://www.youtube.com/embed/E-Oc0zjeqWo?list=PLQSMS0J6JbrKdSOSbyJXaQ_zN_HSSp7zZ', 'A great total body exercise that is performed in four steps, and can be a challenging cardiovascular exercise.');
 var kbellSwing = new MakeWorkout('KettleBell Swings', 'Total', 'Beginner', true, true, 'Total', 'https://www.youtube.com/embed/OPcG_thX6Dc', 'Develops power in your hamstrings, glutes, core, and will get your heart rate up in no time. Focus on the hip hinge and being explosive.');
+var thrusters = new MakeWorkout('Thrusters', 'Total', 'Intermediate', true, true, 'Total', 'https://www.youtube.com/embed/M5gEwLTtWbg', 'Combines a front squat with an overhead press. A great compound exercise that works the whole body.');
+var snatch = new MakeWorkout('Single-arm Snatch', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a dumbbell, kettlebell, or barbell from the ground to overhead.');
 
 var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman, benchPress, flys, weightedPushup, curls, shoulderPress, pullup];
-var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat];
-var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing];
+var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge];
+var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing, thrusters, snatch];
 var core = [crunch, russianTwist, vUp, legRaise, plank];
 
 function pickCore() {
