@@ -1,26 +1,32 @@
 
-body {
+.imgBackground {
 background-image: url(images/workoutGirl.jpg);
+position: fixed;
+z-index: -2;
 }
-
-.bannerImg {
-  width: 100%;
-  position:fixed;
-  z-index: -1;
-  left: 0px;
-}
-
 .mainTitle {
   text-align: center;
   text-decoration: underline;
+  color: #F6F7FA;
 }
-
-.mainTextModify {
+nav {
+  background-color: #3A4C5F;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.descriptionPlace {
+  position:relative;
+  top: 200px;
+  width: 90%;
   margin-left: 5%;
   margin-right: 5%;
 }
 
 .testimonials {
+  position:absolute;
+  top: 400px;
   width: 40%;
   margin-left: 5%;
   float:left;
@@ -32,6 +38,10 @@ background-image: url(images/workoutGirl.jpg);
 }
 
 .cautionStatement {
+  position:absolute;
+  width: 40%;
+  top: 550px;
+  right: 0px;
   float:right;
   border: 1px solid black;
 }
@@ -75,6 +85,9 @@ background-image: url(images/workoutGirl.jpg);
 }
 
 #continueButton {
+  position:absolute;
+  top: 350px;
+  right: 185px;
   box-shadow: 9px 6px 20px #9DB0A3;
   background-color: rgb(58, 76, 95);
   color: rgb(246, 247, 250);
