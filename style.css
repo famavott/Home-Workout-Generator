@@ -17,6 +17,20 @@ z-index: -2;
   text-decoration: underline;
   color: #F6F7FA;
   text-shadow: 9px 6px 20px black;
+  float:left;
+}
+.socialIcon {
+  width: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+  float:right;
+  filter:opacity(50%);
+  filter: brightness(50%);
+}
+.socialIcon:hover {
+  filter:opacity(100%);
+  filter:brightness(100%);
+  filter:drop-shadow(6px 6px 6px black);
 }
 nav {
   background-color: #3C5695;
