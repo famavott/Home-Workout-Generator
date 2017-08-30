@@ -228,15 +228,13 @@ function getFormData (event) {
   var goals = document.getElementsByName('goal');
   for (var i = 0; i < goals.length; i++){
     if (goals[i].checked){
-      // newPerson.push(goals[i].value);
       user.goal = goals[i].value;
     }
   }
-  // debugger;
+
   var equipment = document.getElementsByName('equipment');
   for (var i = 0; i < equipment.length; i++){
     if (equipment[i].checked){
-      // newPerson.push(equipment[i].value);
       user.equipment = equipment[i].value;
     }
   }
