@@ -130,6 +130,7 @@ nav {
 
 #workoutResults1, #workoutResults2, #workoutResults3, #workoutResults4, #workoutResults5, #workoutResults6 {
   width: 35%;
+  min-width: 460px;
   height: 180px;
   background-color: white;
   margin-left: 5%;
@@ -143,8 +144,9 @@ nav {
 }
 
 #resultsPage {
+  /*background-color: black;
   background-image: url('images/robot.jpg');
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 
 .iframeSizing {
