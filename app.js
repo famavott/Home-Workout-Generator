@@ -3,6 +3,10 @@
 var workouts = []; //might not need
 var generatedWorkout = [];
 var workoutOptions = [];
+var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message20Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 
 function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.name = name;
@@ -273,6 +277,7 @@ timer for result page
 var resultsPage = [];
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 function createWorkoutPage() {
+  workoutInstructions();
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById('workoutResults');
@@ -284,7 +289,6 @@ function createWorkoutPage() {
     video.src = resultsPage[i].img;
     workoutContainer.appendChild(vidContainer);
     vidContainer.appendChild(video);
-
   }
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById(workoutId[i]);
@@ -295,3 +299,26 @@ function createWorkoutPage() {
   }
 }
 createWorkoutPage();
+function workoutInstructions() {
+  if(user.length === '10min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message10Min;
+    instructionsContainer.appendChild(instructions);
+  }else if(user.length === '20min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message20Min;
+    instructionsContainer.appendChild(instructions);
+  }else if(user.length === '30min') {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message30Min;
+    instructionsContainer.appendChild(instructions);
+  }else {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message40Min;
+    instructionsContainer.appendChild(instructions);
+  }
+};
