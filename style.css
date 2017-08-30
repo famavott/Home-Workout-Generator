@@ -60,6 +60,8 @@ nav {
   margin-left: 27%;
   margin-right: 27%;
   text-align: left;
+  position: absolute;
+  margin-top: 120px;
 }
 
 .formHeader {
@@ -95,4 +97,14 @@ nav {
 }
  a {
   text-decoration: none;
+}
+
+.formBody {
+  background-image: url(images/Post-Image.jpg);
+}
+
+.formInfo {
+  border: 1px solid black;
+  padding: 20px;
+  font-weight: bold;
 }

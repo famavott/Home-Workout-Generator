@@ -3,22 +3,21 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title>Workout Bro's</title>
+    <title>Workout Generator Form</title>
   </head>
-  <body>
+  <body class="formBody">
     <nav>
-      <h1 class = "mainTitle">Workout Bro's
-      </h1>
+      <h1 class="mainTitle">Generate Your Workout</h1>
     </nav>
-    <div class = "formBox">
+    <div class="formBox">
       <hr/>
-      <h2 class = "formHeader">Let's get started with making your workout, please answer these questions.
-      </h2>
+      <h2 class="formHeader">Let's get started with making your workout, please answer these questions.</h2>
       <hr/>
+    <div class="formInfo">
       <form id="workoutForm" action="form.html" method="post">
        <p>Name:
          <input type="text" name="name" size="15" placeholder="input name" required="required">
-       </p>
+      </p>
        <p>Age:
          <input type="number" name="age" placeholder="input age" required="required" min="15" max="100">
        </p>
@@ -53,13 +52,13 @@
         <input type="radio" name="equipment" value="true" required>Yes
         <input type="radio" name="equipment" value="false" required>No
       </p>
-      <input id="clickMe" type="submit" name="submit" value="Get Swoll" >
+      <input id="clickMe" type="submit" name="submit" value="Get Started!" >
       </form>
+    </div>
     </div>
     <footer>
       <hr/>
-      <p>Location
-      </p>
+      <p>Location</p>
     </footer>
   </body>
   <script src="app.js"></script>
