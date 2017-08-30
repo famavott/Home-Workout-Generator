@@ -8,7 +8,6 @@ var message20Min = 'Complete the six exercises below as a circuit, completing on
 var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var resultsPage = [];
-var newPerson = [];
 var user = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
 };
@@ -45,13 +44,6 @@ function pickTotalBody(){
   }
   // localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
 }
-//Test Object for user
-// var user = {type: 'Total', level:'Advanced', equipment: false, length: '20min'};
-
-/*
-if user wants upper body workout sort through array of workouts to find type = upperBody
-
-*/
 
 //Upper body - chest
 var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
@@ -215,25 +207,21 @@ function getFormData (event) {
   user.name = name;
   var age = document.getElementsByName('age')[0].value;
   user.age = age;
-  // newPerson.push(name, age);
   var fitnessLevel = document.getElementsByName('level');
   for (var i = 0; i < fitnessLevel.length; i++){
     if (fitnessLevel[i].checked){
-      // newPerson.push(fitnessLevel[i].value);
       user.level = fitnessLevel[i].value;
     }
   }
   var workoutLength = document.getElementsByName('length');
   for (var i = 0; i < workoutLength.length; i++){
     if (workoutLength[i].checked){
-      // newPerson.push(workoutLength[i].value);
       user.length = workoutLength[i].value;
     }
   }
   var workoutType = document.getElementsByName('type');
   for (var i = 0; i < workoutType.length; i++){
     if (workoutType[i].checked){
-      // newPerson.push(workoutType[i].value);
       user.type = workoutType[i].value;
     }
   }
@@ -252,19 +240,21 @@ function getFormData (event) {
       user.equipment = equipment[i].value;
     }
   }
+  // debugger;
   genUserWorkout();
-  window.location = 'result.html';
+  // createWorkoutPage();
+  // window.location = 'result.html';
+
 }
 
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
-
 /*
 timer for result page
 */
 // function timer(time) {
-//   var getElementById('workoutTimer');
+//   var getElementById('workoutTimer');  er
 //
 // }
 
@@ -308,7 +298,7 @@ function workoutInstructions() {
     var instructions = document.createElement('p');
     instructions.innerHTML = message30Min;
     instructionsContainer.appendChild(instructions);
-  }else {
+  }else if (user.length === '40min') {
     var instructionsContainer = document.getElementById('instructions');
     var instructions = document.createElement('p');
     instructions.innerHTML = message40Min;
