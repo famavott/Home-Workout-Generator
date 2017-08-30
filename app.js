@@ -243,7 +243,7 @@ function getFormData (event) {
   // debugger;
   genUserWorkout();
   // createWorkoutPage();
-  // window.location = 'result.html';
+  window.location = 'result.html';
 
 }
 
@@ -281,7 +281,7 @@ function createWorkoutPage() {
     workoutContainer.appendChild(iframeDesc);
   }
 }
-createWorkoutPage();
+// createWorkoutPage();
 function workoutInstructions() {
   if(user.length === '10min') {
     var instructionsContainer = document.getElementById('instructions');
