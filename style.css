@@ -33,21 +33,20 @@ z-index: -2;
   filter:drop-shadow(6px 6px 6px black);
 }
 nav {
-  background-color: #3C5695;
+  background-color: rgba(54, 65, 83, 0.7);
   width: 100%;
   position: fixed;
   top: 0px;
   left: 0px;
 }
 .descriptionPlace {
-  background-color: black;
-  opacity: 0.75;
+  background-color: rgba(50, 62, 80, 0.9);
   padding: 10px;
   color: #F6F7FA;
-  position:relative;
-  top: 55px;
-  width: 99%;
-  border: 1% solid black;
+  margin-top: 15%;
+  margin-left: 5%;
+  width: 20%;
+  box-shadow: 5px 5px 2.5px rgb(181, 188, 196);
   border-radius: 8px;
 }
 .mainTextModifyH2 {
