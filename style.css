@@ -241,7 +241,7 @@ hr {
 #clickMe:hover {
   border: 2px solid rgb(157, 176, 163);
   border-radius: 10px;
-  background-color: rgb(246, 247, 250);
+  background-color: rgba(124, 130, 140, 0.4);
   color: rgb(157, 176, 163);
   width: 30%;
   font-family: 'Poppins', sans-serif;
