@@ -28,8 +28,8 @@ overflow: hidden;
   margin-right: 2%;
   margin-top: 1%;
   float:right;
-  filter:opacity(50%);
-  filter: brightness(50%);
+  filter:opacity(65%);
+  filter: brightness(75%);
 }
 .socialIcon:hover {
   filter:opacity(100%);
@@ -44,14 +44,15 @@ nav {
   left: 0px;
 }
 .descriptionPlace {
-  background-color: rgba(50, 62, 80, 0.9);
+  background-color: rgba(50, 62, 80, 0.5);
   padding: 10px;
   color: #F6F7FA;
   margin-top: 15%;
   margin-left: 5%;
   width: 20%;
-  box-shadow: 8px 8px 10.5px rgb(144, 159, 177);
+  box-shadow: 8px 8px 10.5px black;
   border-radius: 8px;
+  border: 1px solid white;
 }
 .mainTextModifyH2 {
   text-decoration: underline;
@@ -76,7 +77,7 @@ nav {
   margin: 3%;
   border: 1px solid #3C5695;
   border-radius: 6px;
-  box-shadow: 8px 8px 10.5px rgb(144, 159, 177);
+  box-shadow: 8px 8px 5.5px rgb(144, 159, 177);
 }
 .workoutSize::-webkit-scrollbar {
     display: none;
