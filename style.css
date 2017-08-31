@@ -11,6 +11,7 @@ overflow: hidden;
 }
 .scrollFix {
   background-image: url(images/workoutGirl.jpg);
+  background-repeat: no-repeat;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: black;
@@ -42,6 +43,7 @@ nav {
   position: fixed;
   top: 0px;
   left: 0px;
+  z-index: 1;
 }
 .descriptionPlace {
   background-color: rgba(50, 62, 80, 0.5);
