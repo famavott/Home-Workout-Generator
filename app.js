@@ -1,6 +1,6 @@
 'use strict';
 
-// var workouts = []; //might not need
+var randomWorkout = [];
 var generatedWorkout = [];
 var workoutOptions = [];
 var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
@@ -8,7 +8,6 @@ var message20Min = 'Complete the six exercises below as a circuit, completing on
 var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var resultsPage = [];
-// var getUser = {};
 var user = {
   name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
 };
@@ -95,6 +94,7 @@ var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, hand
 var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge];
 var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing, thrusters, snatch];
 var core = [crunch, russianTwist, vUp, legRaise, plank];
+
 
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
@@ -297,25 +297,65 @@ function createWorkoutPage() {
 }
 // createWorkoutPage();
 function workoutInstructions() {
-  if(user.length === '10min') {
-    var instructionsContainer = document.getElementById('instructions');
-    var instructions = document.createElement('p');
-    instructions.innerHTML = message10Min;
-    instructionsContainer.appendChild(instructions);
-  }else if(user.length === '20min') {
-    var instructionsContainer = document.getElementById('instructions');
-    var instructions = document.createElement('p');
-    instructions.innerHTML = message20Min;
-    instructionsContainer.appendChild(instructions);
-  }else if(user.length === '30min') {
-    var instructionsContainer = document.getElementById('instructions');
-    var instructions = document.createElement('p');
-    instructions.innerHTML = message30Min;
-    instructionsContainer.appendChild(instructions);
-  }else if (user.length === '40min') {
+  if (!user) {
     var instructionsContainer = document.getElementById('instructions');
     var instructions = document.createElement('p');
     instructions.innerHTML = message40Min;
     instructionsContainer.appendChild(instructions);
+  }else{
+    if(user.length === '10min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message10Min;
+      instructionsContainer.appendChild(instructions);
+    }else if(user.length === '20min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message20Min;
+      instructionsContainer.appendChild(instructions);
+    }else if(user.length === '30min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message30Min;
+      instructionsContainer.appendChild(instructions);
+    }else if (user.length === '40min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message40Min;
+      instructionsContainer.appendChild(instructions);
+    }
   }
 };
+
+// //Testing Random workout fundtion
+function randomizedWorkout(){
+  randomWorkout = [];
+  var fullWorkouts = upperBody.concat(lowerBody.concat(totalBody.concat(core)));
+  var temp = [];
+  for (var i = 0; i < 6; i++){
+    var rando = Math.floor(Math.random() * fullWorkouts.length);
+    console.log('random num = ' + rando);
+    if (!temp.includes(rando)){
+      randomWorkout.push(fullWorkouts[rando]);
+      temp.push(rando);
+    }else {
+      i--;
+    }
+    console.log('index ' + i);
+    console.log('temp nums = ' + temp);
+    console.log(randomWorkout);
+  }
+  return randomWorkout;
+}
+
+var button = document.getElementById('randomButton');
+button.addEventListener('click', genRandomWorkout);
+debugger;
+function genRandomWorkout(event){
+  event.preventDefault();
+  var tempWorkout = randomizedWorkout();
+  localStorage.setItem('workoutData', JSON.stringify(tempWorkout));
+  window.location = 'result.html';
+}
+
+// ///end Random workout Testing
