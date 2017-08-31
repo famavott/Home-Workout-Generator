@@ -258,10 +258,35 @@ function getFormData (event) {
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
+/*
+timer for result page
+*/
+// function timer(time, display) {
+//   var theTime = time, minutes, seconds;
+//   setInterval(function() {
+//     minutes = parseInt(time / 60, 10);
+//     seconds = parseInt(time % 60, 10);
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
+//
+//     if (--timer < 0) {
+//       timer = duration;
+//     }
+//   }, 1000);
+// }
+//
+// function runTimer () {
+//   var givenTime = 60 * parseInt(user.length.value),
+//   var display = getElementById('workoutTimer')
+//   display.innerHTML = 'Lets get your workout going! You have ' + minutes + ':' + seconds + ' to finish your workout'
+//   timer(user.length.value, display);
+// };
+
 function createWorkoutPage() {
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   user = JSON.parse(localStorage.getItem('userData'));
   workoutInstructions();
+  bringName();
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById('workoutResults');
     var vidContainer = document.createElement('div');
@@ -313,6 +338,14 @@ function workoutInstructions() {
   }
 };
 
+function bringName() {
+  var getName = document.getElementById('showName');
+  var appendName = document.createElement('p');
+  appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
+  getName.appendChild(appendName);
+
+}
+
 function randomizedWorkout(){
   randomWorkout = [];
   var fullWorkouts = upperBody.concat(lowerBody.concat(totalBody.concat(core)));
@@ -338,3 +371,4 @@ function genRandomWorkout(event){
   localStorage.setItem('workoutData', JSON.stringify(tempWorkout));
   window.location = 'result.html';
 }
+

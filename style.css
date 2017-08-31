@@ -228,6 +228,7 @@ input {
   background-color: rgb(246, 247, 250);
 }
 #instructions {
+  margin-top: 10px;
   color: rgb(246, 247, 250);
 }
 #workoutResults div{
@@ -238,4 +239,13 @@ input {
   overflow-y: scroll;
   border: 1px solid white;
   border-radius: 8px;
+}
+
+#showName {
+  color: rgb(246, 247, 250);
+  margin-top: 80px;
+  padding-bottom: 0px;
+  font-family: 'Concert One', cursive;
+  font-size: 50px;
+  text-align: center;
 }
