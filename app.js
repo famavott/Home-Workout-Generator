@@ -1,5 +1,6 @@
   'use strict';
 
+<<<<<<< HEAD
   var randomWorkout = [];
   var generatedWorkout = [];
   var workoutOptions = [];
@@ -34,6 +35,32 @@
     pickQuads();
     pickCore();
   }
+=======
+var randomWorkout = [];
+var generatedWorkout = [];
+var workoutOptions = [];
+var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message20Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
+var resultsPage = [];
+var user = {
+  name : '', age : '',level : '', length : '', type : '', goal : '', equipment : ''
+};
+
+function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
+  this.name = name;
+  this.type = type;
+  this.level = level;
+  this.equipment = equipment;
+  this.cardio = cardio;
+  this.group = group;
+  this.img = img;
+  this.descr = descr;
+}
+
+>>>>>>> secondary_master
 
   function pickTotalBody(){
     for (var i = 0; i < 3; i++){
@@ -90,6 +117,7 @@
   var thrusters = new MakeWorkout('Thrusters', 'Total', 'Intermediate', true, true, 'Total', 'https://www.youtube.com/embed/M5gEwLTtWbg', 'Combines a front squat with an overhead press. A great compound exercise that works the whole body.');
   var snatch = new MakeWorkout('Single-arm Snatch', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a dumbbell, kettlebell, or barbell from the ground to overhead.');
 
+<<<<<<< HEAD
   var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman, benchPress, flys, weightedPushup, curls, shoulderPress, pullup];
   var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge];
   var totalBody = [burpee, bearcrawl, mountainClimber, jumpingJack, spidermanPushup, kbellSwing, thrusters, snatch];
@@ -99,6 +127,30 @@
     var randoNum = Math.floor(Math.random() * core.length);
     generatedWorkout.push(core[randoNum]);
   }
+=======
+function pickUpperBody(){
+  pickChest();
+  pickShouldersArms();
+  pickCore();
+}
+
+function pickLowerBody(){
+  pickGlutes();
+  pickQuads();
+  pickCore();
+}
+
+function pickTotalBody(){
+  for (var i = 0; i < 3; i++){
+    var randoNum = Math.floor(Math.random() * workoutOptions.length);
+    generatedWorkout.push(totalBody[randoNum]);
+  }
+}
+function pickCore() {
+  var randoNum = Math.floor(Math.random() * core.length);
+  generatedWorkout.push(core[randoNum]);
+}
+>>>>>>> secondary_master
 
   function pickShouldersArms() {
     for (var i = 0; i < 1; i++){
@@ -111,10 +163,16 @@
     }
   }
 
+<<<<<<< HEAD
   function pickChest() {
     for (var i = 0; i < 1; i++){
       var randoNum = Math.floor(Math.random() * workoutOptions.length);
       console.log(randoNum);
+=======
+function pickChest() {
+  for (var i = 0; i < 1; i++){
+    var randoNum = Math.floor(Math.random() * workoutOptions.length);
+>>>>>>> secondary_master
 
       if (workoutOptions[randoNum].group === 'chest'){
         generatedWorkout.push(workoutOptions[randoNum]);
@@ -146,6 +204,7 @@
     }
   }
 
+<<<<<<< HEAD
   function filterWorkouts(user, typeArray){
     var newWorkouts = typeArray;
     if (user.equipment === true){
@@ -172,6 +231,45 @@
       });
     }
     return newWorkouts;
+=======
+function filterWorkouts(user, typeArray){
+  var newWorkouts = typeArray;
+  if (user.equipment === true){
+    newWorkouts = typeArray.filter(function(typeArray){
+      return typeArray.equipment === true;
+    });
+  }
+  else {
+    newWorkouts = typeArray.filter(function(typeArray){
+      return typeArray.equipment === false;
+    });
+  }
+
+  if (user.level === 'Beginner'){
+    newWorkouts = newWorkouts.filter(function(newWorkouts){
+      return newWorkouts.level === 'Beginner';
+    });
+  }else if (user.level === 'Intermediate') {
+    newWorkouts = newWorkouts.filter(function(newWorkouts){
+      return newWorkouts.level === 'Intermediate';
+    });
+  }else {
+    newWorkouts = newWorkouts.filter(function(newWorkouts){
+      return newWorkouts.level === 'Advanced';
+    });
+  }
+  return newWorkouts;
+}
+
+function genUserWorkout(){
+
+  if (user.type === 'Upper'){
+    workoutOptions = filterWorkouts(user, upperBody);
+  } else if (user.type === 'Lower') {
+    workoutOptions = filterWorkouts(user, lowerBody);
+  } else {
+    workoutOptions = filterWorkouts(user, totalBody);
+>>>>>>> secondary_master
   }
 
   function genUserWorkout(){
@@ -206,12 +304,17 @@
     }
     localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
   }
+<<<<<<< HEAD
   console.log(generatedWorkout);
 
   //
   // /*  Kavdi's area... DON"T TOUCH!!   */
   //
   //
+=======
+  localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
+}
+>>>>>>> secondary_master
 
   function getFormData (event) {
     event.preventDefault();
@@ -225,6 +328,7 @@
         user.level = fitnessLevel[i].value;
       }
     }
+<<<<<<< HEAD
     var workoutLength = document.getElementsByName('length');
     for (var i = 0; i < workoutLength.length; i++){
       if (workoutLength[i].checked){
@@ -236,6 +340,21 @@
       if (workoutType[i].checked){
         user.type = workoutType[i].value;
       }
+=======
+  }
+
+  var workoutLength = document.getElementsByName('length');
+  for (var i = 0; i < workoutLength.length; i++){
+    if (workoutLength[i].checked){
+      user.length = workoutLength[i].value;
+    }
+  }
+
+  var workoutType = document.getElementsByName('type');
+  for (var i = 0; i < workoutType.length; i++){
+    if (workoutType[i].checked){
+      user.type = workoutType[i].value;
+>>>>>>> secondary_master
     }
 
     var goals = document.getElementsByName('goal');
@@ -247,6 +366,7 @@
 
     var equipment = document.getElementsByName('equipment');
 
+<<<<<<< HEAD
     if (equipment[0].checked){
       user.equipment = true;
     }else{
@@ -258,10 +378,22 @@
     window.location = 'result.html';
 
   }
+=======
+  if (equipment[0].checked){
+    user.equipment = true;
+  }else{
+    user.equipment = false;
+  }
+  localStorage.setItem('userData', JSON.stringify(user));
+  genUserWorkout();
+  window.location = 'result.html';
+}
+>>>>>>> secondary_master
 
   document.getElementById('clickMe');
   document.addEventListener('submit', getFormData);
 
+<<<<<<< HEAD
   /*
   timer for result page
   */
@@ -297,6 +429,80 @@
   // createWorkoutPage();
   function workoutInstructions() {
     if (!user) {
+=======
+/*
+timer for result page
+*/
+// function timer(time, display) {
+//   var theTime = time, minutes, seconds;
+//   setInterval(function() {
+//     minutes = parseInt(time / 60, 10);
+//     seconds = parseInt(time % 60, 10);
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
+//
+//     if (--timer < 0) {
+//       timer = duration;
+//     }
+//   }, 1000);
+// }
+//
+// function runTimer () {
+//   var givenTime = 60 * parseInt(user.length.value),
+//   var display = getElementById('workoutTimer')
+//   display.innerHTML = 'Lets get your workout going! You have ' + minutes + ':' + seconds + ' to finish your workout'
+//   timer(user.length.value, display);
+// };
+
+function createWorkoutPage() {
+  resultsPage = JSON.parse(localStorage.getItem('workoutData'));
+  user = JSON.parse(localStorage.getItem('userData'));
+  workoutInstructions();
+  bringName();
+  for(var i = 0; i < resultsPage.length; i++){
+    var workoutContainer = document.getElementById('workoutResults');
+    var vidContainer = document.createElement('div');
+    vidContainer.setAttribute('class', 'workoutFrame');
+    vidContainer.setAttribute('id', workoutId[i]);
+    var video = document.createElement('iframe');
+    video.setAttribute('class', 'iframeSizing');
+    video.src = resultsPage[i].img;
+    workoutContainer.appendChild(vidContainer);
+    vidContainer.appendChild(video);
+  }
+  for(var i = 0; i < resultsPage.length; i++){
+    var workoutContainer = document.getElementById(workoutId[i]);
+    var iframeDesc = document.createElement('p');
+    iframeDesc.setAttribute('class', 'description');
+    iframeDesc.innerHTML = resultsPage[i].descr;
+    workoutContainer.appendChild(iframeDesc);
+  }
+}
+
+function workoutInstructions() {
+  if (!user) {
+    var instructionsContainer = document.getElementById('instructions');
+    var instructions = document.createElement('p');
+    instructions.innerHTML = message40Min;
+    instructionsContainer.appendChild(instructions);
+  }else{
+    if(user.length === '10min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message10Min;
+      instructionsContainer.appendChild(instructions);
+    }else if(user.length === '20min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message20Min;
+      instructionsContainer.appendChild(instructions);
+    }else if(user.length === '30min') {
+      var instructionsContainer = document.getElementById('instructions');
+      var instructions = document.createElement('p');
+      instructions.innerHTML = message30Min;
+      instructionsContainer.appendChild(instructions);
+    }else if (user.length === '40min') {
+>>>>>>> secondary_master
       var instructionsContainer = document.getElementById('instructions');
       var instructions = document.createElement('p');
       instructions.innerHTML = message40Min;
@@ -326,6 +532,7 @@
     }
   };
 
+<<<<<<< HEAD
   // //Testing Random workout fundtion
   function randomizedWorkout(){
     randomWorkout = [];
@@ -345,8 +552,31 @@
       console.log(randomWorkout);
     }
     return randomWorkout;
+=======
+function bringName() {
+  var getName = document.getElementById('showName');
+  var appendName = document.createElement('p');
+  appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
+  getName.appendChild(appendName);
+
+}
+
+function randomizedWorkout(){
+  randomWorkout = [];
+  var fullWorkouts = upperBody.concat(lowerBody.concat(totalBody.concat(core)));
+  var temp = [];
+  for (var i = 0; i < 6; i++){
+    var rando = Math.floor(Math.random() * fullWorkouts.length);
+    if (!temp.includes(rando)){
+      randomWorkout.push(fullWorkouts[rando]);
+      temp.push(rando);
+    }else {
+      i--;
+    }
+>>>>>>> secondary_master
   }
 
+<<<<<<< HEAD
   var button = document.getElementById('randomButton');
   button.addEventListener('click', genRandomWorkout);
   debugger;
@@ -358,3 +588,15 @@
   }
 
   // ///end Random workout Testing
+=======
+var button = document.getElementById('randomButton');
+button.addEventListener('click', genRandomWorkout);
+
+function genRandomWorkout(event){
+  event.preventDefault();
+  var tempWorkout = randomizedWorkout();
+  localStorage.setItem('workoutData', JSON.stringify(tempWorkout));
+  window.location = 'result.html';
+}
+
+>>>>>>> secondary_master
