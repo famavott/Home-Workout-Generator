@@ -240,7 +240,69 @@ input {
   border: 1px solid white;
   border-radius: 8px;
 }
-
+.navBtn {
+  text-align: center;
+  border: 2px solid rgb(157, 176, 163);
+  border-radius: 10px;
+  background-color: rgba(50, 62, 80, 0.7);
+  color: rgb(246, 247, 250);
+  width: 130px;
+  float:right;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 7px;
+  filter:brightness(90%);
+  box-shadow: 3px 3px 11px rgb(144, 159, 177)
+}
+.navBtn:hover {
+  filter:brightness(100%);
+}
+.homeBtn {
+  text-align: center;
+  border: 2px solid rgb(157, 176, 163);
+  border-radius: 10px;
+  background-color: rgba(50, 62, 80, 0.7);
+  color: rgb(246, 247, 250);
+  width: 50px;
+  float:right;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 7px;
+  filter:brightness(90%);
+  box-shadow: 3px 3px 11px rgb(144, 159, 177)
+}
+.homeBtn:hover {
+  filter:brightness(100%);
+}
+.opacityFix {
+  filter:opacity(70%);
+}
+.opacityFix:hover {
+  filter:opacity(100%);
+}
+#randomButton {
+  border: 2px solid rgb(157, 176, 163);
+  border-radius: 10px;
+  background-color: black;
+  color: rgb(246, 247, 250);
+  width: 35%;
+  font-family: 'Poppins', sans-serif;
+  padding: 11px;
+  font-size: 15px;
+  float: left;
+  margin-bottom: 5px;
+}
+#randomButton:hover {
+  border: 2px solid rgb(157, 176, 163);
+  border-radius: 10px;
+  background-color: rgb(246, 247, 250);
+  color: rgb(157, 176, 163);
+  width: 35%;
+  font-family: 'Poppins', sans-serif;
+  padding: 11px;
+  font-size: 15px;
+  float: left;
+  margin-bottom: 5px;
 #showName {
   color: rgb(246, 247, 250);
   margin-top: 80px;
