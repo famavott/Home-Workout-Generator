@@ -350,7 +350,6 @@ function randomizedWorkout(){
 
 var button = document.getElementById('randomButton');
 button.addEventListener('click', genRandomWorkout);
-debugger;
 function genRandomWorkout(event){
   event.preventDefault();
   var tempWorkout = randomizedWorkout();
