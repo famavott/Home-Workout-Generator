@@ -38,7 +38,7 @@ overflow: hidden;
   filter:drop-shadow(6px 6px 6px black);
 }
 nav {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -61,6 +61,7 @@ nav {
 }
 .mainContent {
   background-color: black;
+  opacity: 0.8;
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
@@ -70,7 +71,7 @@ nav {
     display: none;
 }
 .workoutSize, .customized, .testimonials{
-  background-color: rgba(50, 62, 80, 0.9);
+  background-color: rgba(50, 62, 80, 1);
   color: #F6F7FA;
   padding: 10px;
   width: 20%;
