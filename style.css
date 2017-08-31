@@ -1,5 +1,5 @@
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .mainPageInfo {
 position: absolute;
@@ -19,7 +19,6 @@ overflow: hidden;
 }
 .mainTitle {
   margin-left: 1%;
-  text-decoration: underline;
   color: #F6F7FA;
   text-shadow: 9px 6px 20px black;
   float:left;
@@ -38,7 +37,7 @@ overflow: hidden;
   filter:drop-shadow(6px 6px 6px black);
 }
 nav {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -57,7 +56,6 @@ nav {
   border: 1px solid white;
 }
 .mainTextModifyH2 {
-  text-decoration: underline;
 }
 .mainContent {
   background-color: black;
@@ -82,6 +80,23 @@ nav {
   border-radius: 8px;
   box-shadow: 8px 8px 5px rgb(144, 159, 177);
 }
+
+.workoutSize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+}
+
+.customized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+}
+
 .workoutSize::-webkit-scrollbar {
     display: none;
 }
@@ -111,6 +126,10 @@ nav {
   text-align: left;
   position: absolute;
   margin-top: 120px;
+}
+
+.icons {
+  display: block;
 }
 
 .formHeader {
@@ -219,6 +238,19 @@ hr {
   margin-bottom: 5px;
 }
 
+#clickMe:hover {
+  border: 2px solid rgb(157, 176, 163);
+  border-radius: 10px;
+  background-color: rgb(246, 247, 250);
+  color: rgb(157, 176, 163);
+  width: 30%;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  float: right;
+  margin-bottom: 5px;
+}
+
 input[type=text] {
   border-radius: 5px;
   background-color: rgb(246, 247, 250);
@@ -227,4 +259,18 @@ input[type=text] {
 input[type=number] {
   border-radius: 5px;
   background-color: rgb(246, 247, 250);
+}
+
+#instructions {
+  color: rgb(246, 247, 250);
+}
+
+#workoutResults div{
+  font-size: 14px;
+  padding: 30px;
+  background-color: rgba(50, 62, 80, 0.7);
+  color: rgb(246, 247, 250);
+  overflow-y: scroll;
+  border: 1px solid white;
+  border-radius: 8px;
 }
