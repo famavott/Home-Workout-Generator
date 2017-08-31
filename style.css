@@ -19,7 +19,6 @@ overflow: hidden;
 }
 .mainTitle {
   margin-left: 1%;
-  text-decoration: underline;
   color: #F6F7FA;
   text-shadow: 9px 6px 20px black;
   float:left;
@@ -57,7 +56,6 @@ nav {
   border: 1px solid white;
 }
 .mainTextModifyH2 {
-  text-decoration: underline;
 }
 .mainContent {
   background-color: black;
