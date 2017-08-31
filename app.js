@@ -47,8 +47,17 @@ var airSquat = new MakeWorkout('Air Squats', 'Lower', 'Beginner', false, false, 
 var deadlift = new MakeWorkout('Single-leg Deadlifts', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/HtHxnWmMgzM', 'A great move that develops balance, as well as hamstring and glute strength.');
 var gobletSquat = new MakeWorkout('Goblet Squats', 'Lower', 'Beginner', true, false, 'glutes', 'https://www.youtube.com/embed/lyvMNn9e2d4', 'Another variation of the squat that works most of the lower body, and can be done with a variety of different styles of weights.');
 var suitcaseDeadlift = new MakeWorkout('Suitcase Deadlifts', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/0WPVOzTwCi4', 'A great move that works the hamstrings and glutes, while forcing you to stabilize the core.');
+
+
+var hamstringDrop = new MakeWorkout('Hamstring Drop', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/pncd_eGzQ7U', 'A glute and hamstring workout that also targets your core strength.');
+var plankLegRaises = new MakeWorkout('Elbow Plank Leg Raises', 'Lower', 'Intermediate', false, false, 'https://www.youtube.com/embed/Akf3IP0H9fA', 'A glue and leg workout that has the benefit of giving your core a good push as well.');
+var squatCalfRaise = new MakeWorkout('Squat Hold Calf Raises', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/wYoE11arXIw', 'Full leg workout that specifically targets your calves while still giving you a complete leg workout.');
+var sideKick = new MakeWorkout('Side Kick with Bent Knee', 'Lower', 'Intermediate', false, false, 'https://www.youtube.com/embed/9hKsATwrmzY', 'A glute workout that also targets your hip flexors and core. Make sure to concentrate on your form.');
+var goodMorning = new MakeWorkout('Good Mornings', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/XzD1_jz0si4', 'This workout targets your hamstrings, glutes, and lower back.');
 var splitSquat = new MakeWorkout('Split Squat', 'Lower', 'Advanced', true, false, 'glutes', 'https://www.youtube.com/embed/6wIId6pQzHw', 'A tough single-leg move that will add size to your legs and improve balance.');
+
 //Lower body - quad
+
 var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', false, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles.');
 var boxJump = new MakeWorkout('Box Jump', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/52r_Ul5k03g', 'Great for improving athleticism and muscle that can become a challenging cardiovascular workout.');
 var jumpLunge = new MakeWorkout('Jumping Lunges', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/Kq5lZ4o26Ho', 'Bring lunges to the next level by explosively jumping when transtioning between legs.');
@@ -56,7 +65,13 @@ var pistol = new MakeWorkout('Pistol Squat', 'Lower', 'Advanced', false, false, 
 var weightedLunge = new MakeWorkout('Weighted Lunge', 'Lower', 'Beginner', true, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles. Use dumbells, kettlebells, or whatever is available to you to add weight.');
 var weightedSideLunge = new MakeWorkout('Weighted Side Lunges', 'Lower', 'Intermediate', true, false, 'quads', 'https://www.youtube.com/embed/qDcniqddTeE', 'Works the quads, glutes, adductors, and other smaller stabilizer muscles. Focus on collapsing at the hip and sitting into the lunge.');
 var weightedJumpLunge = new MakeWorkout('Weighted Jumping Lunge', 'Lower', 'Advanced', true, true, 'quads', 'https://www.youtube.com/embed/grID4CMcPdA', 'Explode out of each lunge by jumping and switching legs, keeping the back straight, and controlling the descent of your rear knee to the ground.');
+var bounds = new MakeWorkout('Straight Leg Bounds', 'Lower', 'Beginner', false, true, 'quads', 'https://www.youtube.com/embed/NYH6L2doDm4', 'Leg exercise that works the quadriceps and has the benefit of being a cardio workout.');
+var jumpSquats = new MakeWorkout('Jump Squats', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/bv7as8mDXLQ', 'Full leg exercise that mainly targets the quadriceps and gives you a good cardiovascular workout as well.');
+var reversePlankKick = new MakeWorkout('Reverse Plank Kicks', 'Lower', 'Advanced', false, false, 'quads', 'https://www.youtube.com/embed/3eIPmCV_1HM', 'A full body exercise that targets your quadriceps and hip flexors.');
+var singleLegSquat = new MakeWorkout('Single Leg Squats', 'Lower', 'Intermediate', true, false, 'quads', 'https://www.youtube.com/embed/plHQfHhzW0M', 'Single-leg exercise that targets all leg muscles but specifically your quadriceps.');
+
 //Core
+
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var legRaise = new MakeWorkout('Leg Raises', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/_OQaO65Vdzs', 'This exercise targets the abdominals and hip flexors, and will help to sculpt the core.');
 var plank = new MakeWorkout('Plank', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/pSHjTRCQxIw', 'This static exercise works just about every muscle in the body, and helps to sculpt the core. Try 30 seconds if you\'re just starting out, or 1 minute if you\'re more experienced.');
@@ -73,7 +88,7 @@ var thrusters = new MakeWorkout('Thrusters', 'Total', 'Intermediate', true, true
 var snatch = new MakeWorkout('Single-arm Snatch', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a dumbbell, kettlebell, or barbell from the ground to overhead.');
 
 var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman, benchPress, flys, weightedPushup, curls, shoulderPress, pullup];
-var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge];
+var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge, hamstringDrop, plankLegRaises, squatCalfRaise, sideKick, goodMorning, bounds, jumpSquats, reversePlankKick, singleLegSquat];
 var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing, thrusters, snatch];
 var core = [crunch, russianTwist, vUp, legRaise, plank];
 
