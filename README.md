@@ -12,12 +12,13 @@ Matt Favoino
 With minimal time in the day to find time to get in the gym, people are looking for ways to stay fit without having to take an hour or more out of their routine. Even if you get to the gym, the same stale routine makes it easy to start making excuses for why you can't workout. Our team built this simple website to help solve these problems by providing an intuitive workout generator that is focused on providing a structured workout that can be done at home with little to no equipment. By having the user complete a simple form, our workout generator creates a customized workout that can be done almost anywhere, and is tailored to the user's needs.
 
 ## File Breakdown
-index.html: Our landing page for HomeFit
-form.html: User input form that generates the user's workout
-result.html: Page that displays the generated workout with instructions
-style.css: Master stylesheet for all three plankLegRaises
-app.js: JavaScript for all three pages
-
+<ul>
+  <li>index.html: Our landing page for HomeFit</ul>
+  <li>form.html: User input form that generates the user's workout</ul>
+  <li>result.html: Page that displays the generated workout with instructions</ul>
+  <li>style.css: Master stylesheet for all three HTML files</ul>
+  <li>app.js: JavaScript for all three HTML files</ul>
+</ul>
 ## Deployment
 Website is deployed at the following link: https://famavott.github.io/home_workout_gen/
 
