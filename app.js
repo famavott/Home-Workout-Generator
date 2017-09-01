@@ -3,10 +3,10 @@
 var randomWorkout = [];
 var generatedWorkout = [];
 var workoutOptions = [];
-var message10Min = 'Complete each exercise listed below to finish one circuit. Rest as little as necessary, then start the next circuit. Do three total circuits to finish!';
-var message20Min = 'Complete each exercise listed below to finish one circuit. Rest as little as necessary, then start the next circuit. Do three total circuits to finish!';
-var message30Min = 'Complete each exercise listed below to finish one circuit. Rest as little as necessary, then start the next circuit. Do six total circuits to finish!';
-var message40Min = 'Complete each exercise listed below to finish one circuit. Rest as little as necessary, then start the next circuit. Do six total circuits to finish!';
+var message10Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message20Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement.';
+var message30Min = 'Complete the three exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
+var message40Min = 'Complete the six exercises below as a circuit, completing one set of an exercise before moving onto the next movement, and after the first circuit is complete, begin another circuit.';
 var workoutId = ['workoutResults1', 'workoutResults2', 'workoutResults3', 'workoutResults4', 'workoutResults5', 'workoutResults6'];
 var resultsPage = [];
 var user = {
@@ -27,7 +27,7 @@ function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
 //Upper body - chest
 var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
 var regPushup = new MakeWorkout('Regular Push-up', 'Upper', 'Intermediate', false, false, 'chest', 'https://www.youtube.com/embed/v9LABVJzv8A', 'A classic calisthenic exercise that works the chest, triceps, shoulders, and core by raising and lowering the body towards the ground.');
-var diamondPushup = new MakeWorkout('Diamond Push-up', 'Upper', 'Advanced', false, false, 'chest', 'https://www.youtube.com/embed/SwoNNo4W1OU', 'A more challenging version of the push-up that works the more than normal push-ups.');
+var diamondPushup = new MakeWorkout('Narrow/Diamond Push-up', 'Upper', 'Advanced', false, false, 'chest', 'https://www.youtube.com/embed/SwoNNo4W1OU', 'A more challenging version of the push-up that works the more than normal push-ups.');
 var benchPress = new MakeWorkout('Bench Press', 'Upper', 'Beginner', true, false, 'chest', 'https://www.youtube.com/embed/wzq57DB5Ppg', 'Increases upper-body pushing strength, explosiveness, and muscle growth. Can be done with a barbell or dumbbells.');
 var flys = new MakeWorkout('Standing Flys', 'Upper', 'Intermediate', true, false, 'chest', 'https://www.youtube.com/embed/iA2UnDfRMOw', 'Focus on isolating the chest muscles by bringing weights in and squeezing the chest. Can be done laying on a bench if available.');
 var weightedPushup = new MakeWorkout('Weighted Push-up', 'Upper', 'Advanced', true, false, 'chest', 'https://www.youtube.com/embed/22I56NRZ3cc', 'Make push-ups even more challenging by adding weight to your back. This can be done with a plate, backpack, or weighted vest.');
@@ -36,7 +36,6 @@ var oneLegPushup = new MakeWorkout('Single Leg Pushup', 'Upper', 'Intermediate',
 var inclineBench = new MakeWorkout('Incline Bench Press', 'Upper', 'Intermediate', true, false, 'chest','https://www.youtube.com/embed/oe7N2GUzHIw', 'Lay on a bench angled at 30-45 deg. Push up dumbbells or barbell using your chest muscles.');
 var declineBench = new MakeWorkout('Decline Bench Press', 'Upper', 'Advanced', true, false, 'chest','https://www.youtube.com/embed/Kxt_5D2Rpgg', 'From a decline position, push the dumbbells or a barbell towards the ceiling using your chest muscles and squeezing at the top.');
 var shufflePushup = new MakeWorkout('Alternating Shuffle Pushup', 'Upper', 'Advanced', false, false, 'chest','https://www.youtube.com/embed/mbka9fCaS1U', 'Do a standard push up, then at the top position, release your left hand, and plant it next to your right hand. Release your right hand and readjust to the right so your hands are shoulder width apart again.');
-
 // Upper body - shoulder/arms
 var shoulderTaps = new MakeWorkout('Shoulder Taps', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/gWHQpMUd7vw', 'Works the deltoids, triceps, and core by forcing you to stabilize your body and touch your hand to the opposite shoulder.');
 var superman = new MakeWorkout('Supermans', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/67rgxYNKbZY', 'Simultaneously lift your arms, legs, and chest, and contract at the top of the movement. This exercise can be a good compliment to core movements.');
@@ -52,25 +51,21 @@ var overheadPress = new MakeWorkout('Overhead Press', 'Upper', 'Beginner', false
 var singleArmResistCurl = new MakeWorkout('Single Arm Resisted Curl', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/PwBOPb13BfE', 'In a standing position place your left hand over your right fist, your left arm will provide the resistance for your right bicep. To perform a rep, simply try to bring your right fist up towards your right shoulder while you push down with your left arm. ');
 var elevatedPikePushup = new MakeWorkout('Feet Elevated Pike Pushup', 'Upper', 'Advanced', false, false, 'shoulders_arms','https://www.youtube.com/embed/pel8eS42Lxc','Get into pushup position and rest your feet on a bench or box. Bend your hips, raising your butt toward the ceiling so that your torso is vertical. Lower your body to the floor until your head is between your hands. ' );
 var crabWalk = new MakeWorkout('Crab Walk', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/luOfiPHbQyc', 'Sit on the floor and plant your hands under your shoulders. Place your feet flat and bend your knees. Extend your hips so they rise an inch or so above the floor—this is crab position. Next, walk forward on your hands and feet' );
-
 //Lower body - glutes
 var gluteBridge = new MakeWorkout('Glute Bridge', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/N48d7sm8dbU', 'Strengthens the glutes, and increases glute activation with no equipment necessary.');
-var donkeykickbacks = new MakeWorkout('Donkey Kickbacks', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/SJ1Xuz9D-ZQ', 'Targets each glute, and forced you to stabilize your core through the movement.');
+var donkeykickbacks = new MakeWorkout('Donkey Kickbakcs', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/SJ1Xuz9D-ZQ', 'Targets each glute, and forced you to stabilize your core through the movement.');
 var calfRaise = new MakeWorkout('Calf Raises', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/UV8gOrHmuKc', 'This builds muscle and tones the calves by lifting as high as you can onto your toes.');
 var airSquat = new MakeWorkout('Air Squats', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/C_VtOYc6j5c', 'A classic athletic exercise that works most of the lower body, and is the foundation for any workout program.');
 var deadlift = new MakeWorkout('Single-leg Deadlifts', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/HtHxnWmMgzM', 'A great move that develops balance, as well as hamstring and glute strength.');
 var gobletSquat = new MakeWorkout('Goblet Squats', 'Lower', 'Beginner', true, false, 'glutes', 'https://www.youtube.com/embed/lyvMNn9e2d4', 'Another variation of the squat that works most of the lower body, and can be done with a variety of different styles of weights.');
 var suitcaseDeadlift = new MakeWorkout('Suitcase Deadlifts', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/0WPVOzTwCi4', 'A great move that works the hamstrings and glutes, while forcing you to stabilize the core.');
-
+var splitSquat = new MakeWorkout('Bulgarian Split Squat', 'Lower', 'Advanced', true, false, 'glutes', 'https://www.youtube.com/embed/6wIId6pQzHw', 'A tough single-leg move that will add size to your legs and improve balance.');
 var hamstringDrop = new MakeWorkout('Hamstring Drop', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/pncd_eGzQ7U', 'A glute and hamstring workout that also targets your core strength.');
 var plankLegRaises = new MakeWorkout('Elbow Plank Leg Raises', 'Lower', 'Intermediate', false, false, 'https://www.youtube.com/embed/Akf3IP0H9fA', 'A glue and leg workout that has the benefit of giving your core a good push as well.');
 var squatCalfRaise = new MakeWorkout('Squat Hold Calf Raises', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/wYoE11arXIw', 'Full leg workout that specifically targets your calves while still giving you a complete leg workout.');
 var sideKick = new MakeWorkout('Side Kick with Bent Knee', 'Lower', 'Intermediate', false, false, 'https://www.youtube.com/embed/9hKsATwrmzY', 'A glute workout that also targets your hip flexors and core. Make sure to concentrate on your form.');
 var goodMorning = new MakeWorkout('Good Mornings', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/XzD1_jz0si4', 'This workout targets your hamstrings, glutes, and lower back.');
-var splitSquat = new MakeWorkout('Split Squat', 'Lower', 'Advanced', true, false, 'glutes', 'https://www.youtube.com/embed/6wIId6pQzHw', 'A tough single-leg move that will add size to your legs and improve balance.');
-
 //Lower body - quad
-
 var lunge = new MakeWorkout('Lunge', 'Lower', 'Beginner', false, false, 'quads', 'https://www.youtube.com/embed/UpyDdQjBTa0', 'Single-leg exercise that works the quadriceps, but also works the glutes, hamstrings, and core muscles.');
 var boxJump = new MakeWorkout('Box Jump', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/52r_Ul5k03g', 'Great for improving athleticism and muscle that can become a challenging cardiovascular workout.');
 var jumpLunge = new MakeWorkout('Jumping Lunges', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/Kq5lZ4o26Ho', 'Bring lunges to the next level by explosively jumping when transtioning between legs.');
@@ -82,21 +77,12 @@ var bounds = new MakeWorkout('Straight Leg Bounds', 'Lower', 'Beginner', false, 
 var jumpSquats = new MakeWorkout('Jump Squats', 'Lower', 'Intermediate', false, true, 'quads', 'https://www.youtube.com/embed/bv7as8mDXLQ', 'Full leg exercise that mainly targets the quadriceps and gives you a good cardiovascular workout as well.');
 var reversePlankKick = new MakeWorkout('Reverse Plank Kicks', 'Lower', 'Advanced', false, false, 'quads', 'https://www.youtube.com/embed/3eIPmCV_1HM', 'A full body exercise that targets your quadriceps and hip flexors.');
 var singleLegSquat = new MakeWorkout('Single Leg Squats', 'Lower', 'Intermediate', true, false, 'quads', 'https://www.youtube.com/embed/plHQfHhzW0M', 'Single-leg exercise that targets all leg muscles but specifically your quadriceps.');
-
 //Core
-
 var crunch = new MakeWorkout('Crunches', 'Core', 'Beginner', false, false, 'core', 'https://www.youtube.com/embed/HiRsmHH7psA', 'A beginner exercise that helps strengthen the core.');
 var legRaise = new MakeWorkout('Leg Raises', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/_OQaO65Vdzs', 'This exercise targets the abdominals and hip flexors, and will help to sculpt the core.');
-var plank = new MakeWorkout('Plank', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/pSHjTRCQxIw', 'This static exercise works just about every muscle in the body, and helps to sculpt the core. Try 30 seconds if you\'re just starting out, or 1 minute if you\'re more experienced.');
+var plank = new MakeWorkout('Plank', 'Core', 'Intermediate', false, false, 'core', 'https://www.youtube.com/embed/pSHjTRCQxIw', 'This static exercise works just about every muscle in the body, and helps to sculpt the core.');
 var vUp = new MakeWorkout('V-ups', 'Core', 'Advanced', false, false, 'core', 'https://www.youtube.com/embed/-JIwvMSk4vo', 'Keep your legs straight and bring your upper body off of the floor to try and touch your toes. Great for targeting your middle and upper abs.');
 var russianTwist = new MakeWorkout('Russian Twist', 'Core', 'Advanced', false, false, 'core', 'https://www.youtube.com/embed/l2XsG9W5rYo', 'This exercise strengthens the obliques, and can be performed with or without weight.');
-var plank3pt = new MakeWorkout('3 point Plank', 'Core', 'Intermediate', false, false, 'core','https://www.youtube.com/embed/1jZDOKr9NjE', 'Get down on the floor so that only your forearms and toes are touching the ground. Make your body into a straight line. Lift your left leg up off the ground so that you are balancing on your right leg and both forearms. Hold for the desired amount of time and then switch legs so that your left leg is on the floor and your right is up in the air.');
-var deadBug = new MakeWorkout('Dead Bug', 'Core', 'Advanced', false, false, 'core', 'https://www.youtube.com/embed/mKUvoquc54Y', 'Lie on your back with your arms extended in front of your shoulders. Bend your hips and knees to a 90-degree angle.  As you exhale, slowly extend your left leg toward the floor and bring your right arm overhead. Keep your abs tight and don\'t let your lower back arch. Slowly return your arm and leg to the starting position. Repeat with your opposite arm and leg.');
-var hangingLegRaise = new MakeWorkout('Hanging Leg Raise', 'Core', 'Advanced', true, false, 'core', 'https://www.youtube.com/embed/uaxEVt2z4CE', 'With your legs completely straight the entire time, tighten your core and use your abs to raise your feet toward your shoulders. Pause when your thighs reach your chest.');
-var cableCrunch = new MakeWorkout('Cable Crunch', 'Core', 'Intermediate', true, false, 'core', 'https://www.youtube.com/embed/W-frrCtNmic', 'Keeping your weight on your knees and shins, let the cable pull on your arms and torso so that you feel a light stretch in your abdominal muscles. From there, crunch your body, bringing your forearms down to your knees and your head to the floor. Slowly return to the starting position. ');
-var seatedBarbellTwist = new MakeWorkout('Seated Barbell Twist', 'Core', 'Advanced', true, false, 'core', 'https://www.youtube.com/embed/pXmaiD4NIdg', 'Sit on a flat bench or in a chair with your feet firmly on the floor. Place a barbell on your shoulders, keeping your back straight and upright. Slowly twist your torso to the left, pause for a moment and then move back to the center. You can do continuous repetitions on the same side and then move to the other side. Or, you can target both sides by twisting to the left, returning to the center and then twisting to the right to complete a full repetition.');
-var declineCrunch = new MakeWorkout('Decline Crunch', 'Core', 'Beginner', true, false, 'core','https://www.youtube.com/embed/g6Q81FYhRf0','Place your hands on either side of your head, without locking your fingers. Raise your body slowly while you contract your abs. Crunch up, bringing your elbows to either side of your thighs. At the top of the movement, flex your abs for a one-count and then slowly lower your body back down to the starting position.');
-var dumbbellSideBend = new MakeWorkout('Dumbbell Side Bend', 'Core', 'Intermediate', true, false, 'core', 'https://www.youtube.com/embed/als3uIJaa8Q', 'Keeping your back straight and your eyes facing forwards, bend down to the right as far as you can, then back up again. Without pausing at the top, bend down to the left.');
 //Total body
 var jumpingJack = new MakeWorkout('Jumping Jack', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/gG2Z1siSvkk', 'A classic performed by jumping from a position with legs together, and arms at the sides, to a position with legs apart and arms over head.');
 var bearcrawl = new MakeWorkout('Bear Crawl', 'Total', 'Beginner', false, true, 'Total', 'https://www.youtube.com/embed/bfT5TaRFKQw', 'Increase your heart rate and stabilize your core by doing this fun exercise.');
@@ -340,26 +326,10 @@ function createWorkoutPage() {
   }
   for(var i = 0; i < resultsPage.length; i++){
     var workoutContainer = document.getElementById(workoutId[i]);
-    var exerciseTitle = document.createElement('p');
-    exerciseTitle.setAttribute('class', 'extitle');
-    exerciseTitle.innerHTML = resultsPage[i].name;
-    workoutContainer.appendChild(exerciseTitle);
     var iframeDesc = document.createElement('p');
     iframeDesc.setAttribute('class', 'description');
     iframeDesc.innerHTML = resultsPage[i].descr;
     workoutContainer.appendChild(iframeDesc);
-  }
-  for(var i = 0; i < resultsPage.length; i++){
-    var outlineBox = document.getElementById('resultsTitle');
-    var outline = document.createElement('div');
-    outline.setAttribute('id', 'exerciseList');
-    if (resultsPage[i].name !== 'Plank') {
-      outline.innerHTML = resultsPage[i].name + ' for 8-12 reps';
-      outlineBox.appendChild(outline);
-    }else {
-      outline.innerHTML = resultsPage[i].name + ' for 30 to 60 secs';
-      outlineBox.appendChild(outline);
-    }
   }
 }
 
@@ -397,7 +367,7 @@ function workoutInstructions() {
 function bringName() {
   var getName = document.getElementById('showName');
   var appendName = document.createElement('p');
-  appendName.innerText = user.name + ', let\'s get this workout started!';
+  appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
   getName.appendChild(appendName);
 
 }
