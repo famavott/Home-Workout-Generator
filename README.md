@@ -19,6 +19,7 @@ With minimal time in the day to find time to get in the gym, people are looking 
   <li>style.css: Master stylesheet for all three HTML files</li>
   <li>app.js: JavaScript for all three HTML files</li>
 </ul>
+
 ## Deployment
 Website is deployed at the following link: https://famavott.github.io/home_workout_gen/
 
