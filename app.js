@@ -355,7 +355,7 @@ function createWorkoutPage() {
     var outlineBox = document.getElementById('resultsTitle');
     var outline = document.createElement('div');
     outline.setAttribute('id', 'exerciseList');
-    if (resultsPage[i].name !== 'Plank') {
+    if (resultsPage[i].name !== 'Plank' || resultsPage[i].name !== 'Crab Walk' || resultsPage[i].name !== '3 Point Plank') {
       outline.innerHTML = resultsPage[i].name + ' for 8-12 reps';
       outlineBox.appendChild(outline);
     }else {
