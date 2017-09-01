@@ -250,7 +250,6 @@ function genUserWorkout(){
 function getFormData (event) {
   event.preventDefault();
   var name = document.getElementsByName('name')[0].value;
-  user.name = name;
   var age = document.getElementsByName('age')[0].value;
   user.age = age;
   var fitnessLevel = document.getElementsByName('level');
@@ -397,7 +396,6 @@ function bringName() {
   var appendName = document.createElement('p');
   appendName.innerText = user.name + ', let\'s get this workout started!';
   getName.appendChild(appendName);
-
 }
 
 function randomizedWorkout(){
