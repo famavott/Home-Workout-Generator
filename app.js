@@ -254,6 +254,7 @@ function genUserWorkout(){
 function getFormData (event) {
   event.preventDefault();
   var name = document.getElementsByName('name')[0].value;
+  user.name = name; //somehow this got deleted?
   var age = document.getElementsByName('age')[0].value;
   user.age = age;
   var fitnessLevel = document.getElementsByName('level');
@@ -403,7 +404,6 @@ function bringName() {
   }else {
     appendName.innerText = 'Hey Bro, let\'s get this workout started!';
   }
-  // appendName.innerText = user.name + ', let\'s get this workout started!';
   getName.appendChild(appendName);
 }
 
