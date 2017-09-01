@@ -400,15 +400,12 @@ function workoutInstructions() {
 function bringName() {
   var getName = document.getElementById('showName');
   var appendName = document.createElement('p');
-<<<<<<< HEAD
   if (user){
     appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
   }else {
     appendName.innerText = 'Hey Bro, let\'s get this workout started!';
   }
-=======
   appendName.innerText = user.name + ', let\'s get this workout started!';
->>>>>>> 31bafa123e6d0a76b7f555ac6d0533e5ff1d3a0f
   getName.appendChild(appendName);
 
 }
