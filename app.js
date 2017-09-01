@@ -109,13 +109,19 @@ var burpee = new MakeWorkout('Burpee', 'Total', 'Advanced', false, true, 'Total'
 var kbellSwing = new MakeWorkout('KettleBell Swings', 'Total', 'Beginner', true, true, 'Total', 'https://www.youtube.com/embed/OPcG_thX6Dc', 'Develops power in your hamstrings, glutes, core, and will get your heart rate up in no time. Focus on the hip hinge and being explosive.');
 var thrusters = new MakeWorkout('Thrusters', 'Total', 'Intermediate', true, true, 'Total', 'https://www.youtube.com/embed/M5gEwLTtWbg', 'Combines a front squat with an overhead press. A great compound exercise that works the whole body.');
 var snatch = new MakeWorkout('Single-arm Snatch', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/R0mhHuVrLHA', 'An advanced exercise that requires one fluid movement to take a dumbbell, kettlebell, or barbell from the ground to overhead.');
+var halo = new MakeWorkout('Halo', 'Total', 'Intermediate', true, false, 'Total', 'https://www.youtube.com/embed/Zy6bgAxPeks', 'While holding onto a kettlebell with both hands move it around your head.');
+var spiderWalk = new MakeWorkout('Spider Walk', 'Total', 'Beginner', false, false, 'Total', 'https://www.youtube.com/embed/TVQj8cc9ePA', 'Walk froward while in raised push up position.');
+var lungWOP = new MakeWorkout('Lunge with overhead press', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/E5_YxmOyjiE', 'Hold weights at your sholders then go into a lunge pressing the weights up.');
+var renegade = new MakeWorkout('Renegade Row', 'Total', 'Advanced', true, false, 'Total', 'https://www.youtube.com/embed/PJpTBj4ilZw', 'While in raised push up position lift weights.');
+var figure8 = new MakeWorkout('Figure Eight', 'Total', 'Intermediate', true, false, 'Total', 'https://www.youtube.com/embed/xpHWMC2_e3c', 'Move kettlebell between legs in figure eight alternating the hand that holds it.');
+var backCross = new MakeWorkout('Back bow crossover', 'Total', 'Beginner', false, false, 'Total', 'https://www.youtube.com/embed/JBJmsE6xGsA', 'While facing down raise legs and arms moving both left and right touching down at the end of each motion.');
 
 
 var upperBody = [regPushup, kneelPushup, diamondPushup, shoulderTaps, dips, handstand, superman, benchPress, flys, weightedPushup, curls, shoulderPress, pullup, crabWalk, elevatedPikePushup, singleArmResistCurl, overheadPress, crossHammerCurl, inclineCurl, triPushdown, shufflePushup, declineBench, inclineBench, oneLegPushup, closeGripBench];
 var lowerBody = [gluteBridge, airSquat, deadlift, lunge, boxJump, pistol, jumpLunge, calfRaise, donkeykickbacks, gobletSquat, suitcaseDeadlift, splitSquat, weightedLunge, weightedSideLunge, weightedJumpLunge];
-
-var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing, thrusters, snatch];
+var totalBody = [burpee, bearcrawl, jumpingJack, mountainClimber, spidermanPushup, kbellSwing, thrusters, snatch, halo, spiderWalk, lungWOP, renegade, figure8, backCross];
 var core = [crunch, russianTwist, vUp, legRaise, plank, plank3pt, deadBug, hangingLegRaise, cableCrunch, seatedBarbellTwist, declineCrunch, dumbbellSideBend];
+
 
 function pickUpperBody(){
   pickChest();
