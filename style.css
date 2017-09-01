@@ -130,8 +130,10 @@ nav {
   margin-bottom: 10px;
   border: thin black solid;
 }
-#instructions{
+#instructions {
   margin-top: 88px;
+  font-size: 22px;
+  font-weight: bold;
 }
 #resultsPage {
   background-image: url(images/gym_wall1.jpg);
@@ -143,10 +145,19 @@ nav {
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
+  margin-bottom: 6%;
   float:left;
 }
 .description {
+  font-weight: bold;
 }
+
+.extitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 0px;
+}
+
 hr {
   margin: 0%;
 }
@@ -214,7 +225,7 @@ hr {
 #clickMe:hover {
   border: 2px solid rgb(157, 176, 163);
   border-radius: 10px;
-  background-color: rgb(246, 247, 250);
+  background-color: rgba(124, 130, 140, 0.4);
   color: rgb(157, 176, 163);
   width: 30%;
   font-family: 'Poppins', sans-serif;
@@ -240,6 +251,7 @@ input {
   border: 1px solid white;
   border-radius: 8px;
 }
+
 .navBtn {
   text-align: center;
   border: 2px solid rgb(157, 176, 163);
@@ -252,7 +264,7 @@ input {
   margin-right: 1%;
   padding: 7px;
   filter:brightness(90%);
-  box-shadow: 3px 3px 11px rgb(144, 159, 177)
+  box-shadow: 1px 1px 6px rgb(144, 159, 177)
 }
 .navBtn:hover {
   filter:brightness(100%);
@@ -269,7 +281,7 @@ input {
   margin-right: 1%;
   padding: 7px;
   filter:brightness(90%);
-  box-shadow: 3px 3px 11px rgb(144, 159, 177)
+  box-shadow: 1px 1px 6px rgb(144, 159, 177)
 }
 .homeBtn:hover {
   filter:brightness(100%);
@@ -295,7 +307,7 @@ input {
 #randomButton:hover {
   border: 2px solid rgb(157, 176, 163);
   border-radius: 10px;
-  background-color: rgb(246, 247, 250);
+  background-color: rgba(124, 130, 140, 0.4);
   color: rgb(157, 176, 163);
   width: 35%;
   font-family: 'Poppins', sans-serif;
@@ -303,6 +315,7 @@ input {
   font-size: 15px;
   float: left;
   margin-bottom: 5px;
+}
 #showName {
   color: rgb(246, 247, 250);
   margin-top: 80px;
@@ -311,4 +324,23 @@ input {
   font-family: 'Concert One', cursive;
   font-size: 50px;
   text-align: center;
+}
+#resultsTitle {
+  font-size: 26px;
+  color: rgb(246, 247, 250);
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  left: 750px;
+  padding: 20px;
+  border: 3px solid white;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+}
+#titleLogo {
+  margin-left: 1%;
+  color: #F6F7FA;
+  text-shadow: 9px 6px 20px black;
+  float:left;
+  font-size: 20px;
 }
