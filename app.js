@@ -130,8 +130,12 @@ function pickLowerBody(){
 
 function pickTotalBody(){
   for (var i = 0; i < 3; i++){
-    var randoNum = Math.floor(Math.random() * workoutOptions.length);
-    generatedWorkout.push(totalBody[randoNum]);
+    if (workoutOptions.length > 1){
+      var randoNum = Math.floor(Math.random() * workoutOptions.length);
+      generatedWorkout.push(totalBody[randoNum]);
+    }else{
+      generatedWorkout.push(workoutOptions[0]);
+    }
   }
 }
 function pickCore() {
@@ -394,7 +398,12 @@ function workoutInstructions() {
 function bringName() {
   var getName = document.getElementById('showName');
   var appendName = document.createElement('p');
-  appendName.innerText = user.name + ', let\'s get this workout started!';
+  if (user){
+    appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
+  }else {
+    appendName.innerText = 'Hey Bro, let\'s get this workout started!';
+  }
+  // appendName.innerText = user.name + ', let\'s get this workout started!';
   getName.appendChild(appendName);
 }
 
