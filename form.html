@@ -5,11 +5,18 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel = "icon" type = "img/ico" href = "images/tabIcon.jpg"/>
     <title>Workout Generator Form</title>
   </head>
   <body class="formBody">
     <nav>
       <h1 class="mainTitle">Generate Your Workout</h1>
+      <a href = "https://www.facebook.com/"><img  class = "socialIcon" src = "images/facebook.png"/></a>
+      <a href = "https://www.pinterest.com/"><img  class = "socialIcon" src = "images/IMG_0050.PNG"/></a>
+      <a href = "https://www.instagram.com"><img  class = "socialIcon" src = "images/IMG_0051.GIF"/></a>
+      <a href = "https://twitter.com/twitter?lang=en"><img  class = "socialIcon" src = "images/twitter.png"/></a>
+      <a href = "https://slack.com/"><img  class = "socialIcon" src = "images/slack-icon.png"/></a>
+      <a class = "opacityFix" href = "index.html"><p class = "homeBtn">Home</p></a>
     </nav>
     <div class="formBox">
       <div class="formTitle">
@@ -56,6 +63,7 @@
         <input type="radio" name="equipment" value="true" required>Yes
         <input type="radio" name="equipment" value="false" required>No
       </p>
+      <button id="randomButton" type="submit">Random Workout</button>
       <input id="clickMe" type="submit" name="submit" value="Get Started!" >
       </form>
     </div>
