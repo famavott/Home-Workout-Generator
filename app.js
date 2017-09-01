@@ -400,7 +400,7 @@ function bringName() {
   var getName = document.getElementById('showName');
   var appendName = document.createElement('p');
   if (user){
-    appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
+    appendName.innerText = 'Hey, ' + user.name + ' let\'s get this workout started!';
   }else {
     appendName.innerText = 'Hey Bro, let\'s get this workout started!';
   }
