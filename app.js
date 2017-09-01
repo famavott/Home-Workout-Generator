@@ -386,6 +386,7 @@ function bringName() {
 
 function randomizedWorkout(){
   randomWorkout = [];
+  localStorage.removeItem('userData');
   var fullWorkouts = upperBody.concat(lowerBody.concat(totalBody.concat(core)));
   var temp = [];
   for (var i = 0; i < 6; i++){
