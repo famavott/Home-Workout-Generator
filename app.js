@@ -22,7 +22,7 @@ function MakeWorkout(name, type, level, equipment, cardio, group, img, descr){
   this.group = group;
   this.img = img;
   this.descr = descr;
-}
+};
 
 //Upper body - chest
 var kneelPushup = new MakeWorkout('Kneeling Push-up', 'Upper', 'Beginner', false, false, 'chest', 'https://www.youtube.com/embed/wc-W05Gi9hU', 'A scaled version of the normal push-up that works primarily the chest and triceps.');
@@ -120,13 +120,13 @@ function pickUpperBody(){
   pickChest();
   pickShouldersArms();
   pickCore();
-}
+};
 
 function pickLowerBody(){
   pickGlutes();
   pickQuads();
   pickCore();
-}
+};
 
 function pickTotalBody(){
   for (var i = 0; i < 3; i++){
@@ -137,11 +137,12 @@ function pickTotalBody(){
       generatedWorkout.push(workoutOptions[0]);
     }
   }
-}
+};
+
 function pickCore() {
   var randoNum = Math.floor(Math.random() * core.length);
   generatedWorkout.push(core[randoNum]);
-}
+};
 
 function pickShouldersArms() {
   for (var i = 0; i < 1; i++){
@@ -152,7 +153,7 @@ function pickShouldersArms() {
       i--;
     }
   }
-}
+};
 
 function pickChest() {
   for (var i = 0; i < 1; i++){
@@ -164,7 +165,7 @@ function pickChest() {
       i--;
     }
   }
-}
+};
 
 function pickGlutes() {
   for (var i = 0; i < 1; i++){
@@ -175,7 +176,7 @@ function pickGlutes() {
       i--;
     }
   }
-}
+};
 
 function pickQuads() {
   for (var i = 0; i < 1; i++){
@@ -186,7 +187,7 @@ function pickQuads() {
       i--;
     }
   }
-}
+};
 
 function filterWorkouts(user, typeArray){
   var newWorkouts = typeArray;
@@ -215,7 +216,7 @@ function filterWorkouts(user, typeArray){
     });
   }
   return newWorkouts;
-}
+};
 
 function genUserWorkout(){
 
@@ -249,7 +250,7 @@ function genUserWorkout(){
     }
   }
   localStorage.setItem('workoutData', JSON.stringify(generatedWorkout));
-}
+};
 
 function getFormData (event) {
   event.preventDefault();
@@ -300,30 +301,6 @@ function getFormData (event) {
 document.getElementById('clickMe');
 document.addEventListener('submit', getFormData);
 
-/*
-timer for result page
-*/
-// function timer(time, display) {
-//   var theTime = time, minutes, seconds;
-//   setInterval(function() {
-//     minutes = parseInt(time / 60, 10);
-//     seconds = parseInt(time % 60, 10);
-//     minutes = minutes < 10 ? '0' + minutes : minutes;
-//     seconds = seconds < 10 ? '0' + seconds : seconds;
-//
-//     if (--timer < 0) {
-//       timer = duration;
-//     }
-//   }, 1000);
-// }
-//
-// function runTimer () {
-//   var givenTime = 60 * parseInt(user.length.value),
-//   var display = getElementById('workoutTimer')
-//   display.innerHTML = 'Lets get your workout going! You have ' + minutes + ':' + seconds + ' to finish your workout'
-//   timer(user.length.value, display);
-// };
-
 function createWorkoutPage() {
   resultsPage = JSON.parse(localStorage.getItem('workoutData'));
   user = JSON.parse(localStorage.getItem('userData'));
@@ -363,7 +340,7 @@ function createWorkoutPage() {
       outlineBox.appendChild(outline);
     }
   }
-}
+};
 
 function workoutInstructions() {
   if (!user) {
@@ -400,12 +377,12 @@ function bringName() {
   var getName = document.getElementById('showName');
   var appendName = document.createElement('p');
   if (user){
-    appendName.innerText = 'Hey ' + user.name + ' let\'s get this workout started!';
+    appendName.innerText = 'Hey, ' + user.name + ' let\'s get this workout started!';
   }else {
     appendName.innerText = 'Hey Bro, let\'s get this workout started!';
   }
   getName.appendChild(appendName);
-}
+};
 
 function randomizedWorkout(){
   randomWorkout = [];
@@ -421,7 +398,7 @@ function randomizedWorkout(){
     }
   }
   return randomWorkout;
-}
+};
 
 var button = document.getElementById('randomButton');
 button.addEventListener('click', genRandomWorkout);
