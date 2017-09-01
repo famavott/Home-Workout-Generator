@@ -336,10 +336,3 @@ input {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
 }
-#titleLogo {
-  margin-left: 1%;
-  color: #F6F7FA;
-  text-shadow: 9px 6px 20px black;
-  float:left;
-  font-size: 20px;
-}
