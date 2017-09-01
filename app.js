@@ -405,7 +405,7 @@ function bringName() {
   }else {
     appendName.innerText = 'Hey Bro, let\'s get this workout started!';
   }
-  appendName.innerText = user.name + ', let\'s get this workout started!';
+  // appendName.innerText = user.name + ', let\'s get this workout started!';
   getName.appendChild(appendName);
 
 }
