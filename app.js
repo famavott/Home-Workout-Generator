@@ -32,15 +32,11 @@ var diamondPushup = new MakeWorkout('Narrow/Diamond Push-up', 'Upper', 'Advanced
 var benchPress = new MakeWorkout('Bench Press', 'Upper', 'Beginner', true, false, 'chest', 'https://www.youtube.com/embed/wzq57DB5Ppg', 'Increases upper-body pushing strength, explosiveness, and muscle growth. Can be done with a barbell or dumbbells.');
 var flys = new MakeWorkout('Standing Flys', 'Upper', 'Intermediate', true, false, 'chest', 'https://www.youtube.com/embed/iA2UnDfRMOw', 'Focus on isolating the chest muscles by bringing weights in and squeezing the chest. Can be done laying on a bench if available.');
 var weightedPushup = new MakeWorkout('Weighted Push-up', 'Upper', 'Advanced', true, false, 'chest', 'https://www.youtube.com/embed/22I56NRZ3cc', 'Make push-ups even more challenging by adding weight to your back. This can be done with a plate, backpack, or weighted vest.');
-<<<<<<< HEAD
-=======
 var closeGripBench = new MakeWorkout('Close Grip Bench Press', 'Upper', 'Advanced', true, false, 'chest', 'https://www.youtube.com/embed/J2tcpxNCuPY', 'Grasp a barbell with an overhand grip 6 to 12 inches apart and hold it above your sternum with arms completely straight. Slowly lower the bar down to your chest.');
 var oneLegPushup = new MakeWorkout('Single Leg Pushup', 'Upper', 'Intermediate', false, false, 'chest','https://www.youtube.com/embed/sEP82yp3vjo', 'Normal pushup position, except on alternateing pushups, keep one leg raised in the air.');
 var inclineBench = new MakeWorkout('Incline Bench Press', 'Upper', 'Intermediate', true, false, 'chest','https://www.youtube.com/embed/oe7N2GUzHIw', 'Lay on a bench angled at 30-45 deg. Push up dumbbells or barbell using your chest muscles.');
 var declineBench = new MakeWorkout('Decline Bench Press', 'Upper', 'Advanced', true, false, 'chest','https://www.youtube.com/embed/Kxt_5D2Rpgg', 'From a decline position, push the dumbbells or a barbell towards the ceiling using your chest muscles and squeezing at the top.');
 var shufflePushup = new MakeWorkout('Alternating Shuffle Pushup', 'Upper', 'Advanced', false, false, 'chest','https://www.youtube.com/embed/mbka9fCaS1U', 'Do a standard push up, then at the top position, release your left hand, and plant it next to your right hand. Release your right hand and readjust to the right so your hands are shoulder width apart again.');
-
->>>>>>> 49430999a0a0e71023753518e23a9d2a8d714f83
 // Upper body - shoulder/arms
 var shoulderTaps = new MakeWorkout('Shoulder Taps', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/gWHQpMUd7vw', 'Works the deltoids, triceps, and core by forcing you to stabilize your body and touch your hand to the opposite shoulder.');
 var superman = new MakeWorkout('Supermans', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/67rgxYNKbZY', 'Simultaneously lift your arms, legs, and chest, and contract at the top of the movement. This exercise can be a good compliment to core movements.');
@@ -58,8 +54,6 @@ var overheadPress = new MakeWorkout('Overhead Press', 'Upper', 'Beginner', false
 var singleArmResistCurl = new MakeWorkout('Single Arm Resisted Curl', 'Upper', 'Beginner', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/PwBOPb13BfE', 'In a standing position place your left hand over your right fist, your left arm will provide the resistance for your right bicep. To perform a rep, simply try to bring your right fist up towards your right shoulder while you push down with your left arm. ');
 var elevatedPikePushup = new MakeWorkout('Feet Elevated Pike Pushup', 'Upper', 'Advanced', false, false, 'shoulders_arms','https://www.youtube.com/embed/pel8eS42Lxc','Get into pushup position and rest your feet on a bench or box. Bend your hips, raising your butt toward the ceiling so that your torso is vertical. Lower your body to the floor until your head is between your hands. ' );
 var crabWalk = new MakeWorkout('Crab Walk', 'Upper', 'Intermediate', false, false, 'shoulders_arms', 'https://www.youtube.com/embed/luOfiPHbQyc', 'Sit on the floor and plant your hands under your shoulders. Place your feet flat and bend your knees. Extend your hips so they rise an inch or so above the floor—this is crab position. Next, walk forward on your hands and feet' );
-
->>>>>>> 49430999a0a0e71023753518e23a9d2a8d714f83
 //Lower body - glutes
 var gluteBridge = new MakeWorkout('Glute Bridge', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/N48d7sm8dbU', 'Strengthens the glutes, and increases glute activation with no equipment necessary.');
 var donkeykickbacks = new MakeWorkout('Donkey Kickbakcs', 'Lower', 'Intermediate', false, false, 'glutes', 'https://www.youtube.com/embed/SJ1Xuz9D-ZQ', 'Targets each glute, and forced you to stabilize your core through the movement.');
@@ -70,9 +64,6 @@ var gobletSquat = new MakeWorkout('Goblet Squats', 'Lower', 'Beginner', true, fa
 var suitcaseDeadlift = new MakeWorkout('Suitcase Deadlifts', 'Lower', 'Intermediate', true, false, 'glutes', 'https://www.youtube.com/embed/0WPVOzTwCi4', 'A great move that works the hamstrings and glutes, while forcing you to stabilize the core.');
 <<<<<<< HEAD
 var splitSquat = new MakeWorkout('Bulgarian Split Squat', 'Lower', 'Advanced', true, false, 'glutes', 'https://www.youtube.com/embed/6wIId6pQzHw', 'A tough single-leg move that will add size to your legs and improve balance.');
-=======
-
->>>>>>> 49430999a0a0e71023753518e23a9d2a8d714f83
 var hamstringDrop = new MakeWorkout('Hamstring Drop', 'Lower', 'Advanced', false, false, 'glutes', 'https://www.youtube.com/embed/pncd_eGzQ7U', 'A glute and hamstring workout that also targets your core strength.');
 var plankLegRaises = new MakeWorkout('Elbow Plank Leg Raises', 'Lower', 'Intermediate', false, false, 'https://www.youtube.com/embed/Akf3IP0H9fA', 'A glue and leg workout that has the benefit of giving your core a good push as well.');
 var squatCalfRaise = new MakeWorkout('Squat Hold Calf Raises', 'Lower', 'Beginner', false, false, 'glutes', 'https://www.youtube.com/embed/wYoE11arXIw', 'Full leg workout that specifically targets your calves while still giving you a complete leg workout.');
