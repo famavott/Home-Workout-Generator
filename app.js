@@ -132,7 +132,7 @@ function pickTotalBody(){
   for (var i = 0; i < 3; i++){
     if (workoutOptions.length > 1){
       var randoNum = Math.floor(Math.random() * workoutOptions.length);
-      generatedWorkout.push(totalBody[randoNum]);
+      generatedWorkout.push(workoutOptions[randoNum]);
     }else{
       generatedWorkout.push(workoutOptions[0]);
     }
