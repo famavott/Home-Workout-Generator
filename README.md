@@ -21,7 +21,7 @@ With minimal time in the day to find time to get in the gym, people are looking 
 </ul>
 
 ## Deployment
-Website is deployed at the following link: https://famavott.github.io/home_workout_gen/
+Website is deployed at the following link: https://famavott.github.io/Home-Workout-Generator/
 
 ## Acknowledgements
 All workout videos derived from YouTube
